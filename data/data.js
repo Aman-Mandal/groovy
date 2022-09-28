@@ -38,7 +38,7 @@ export const links = [
   },
 
   {
-    title: "Libray",
+    title: "Library",
     links: [
       {
         name: "Recent",
