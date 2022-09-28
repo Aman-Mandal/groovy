@@ -9,7 +9,7 @@ const Sidebar = () => {
     <div className="ml-3 h-screen overflow-auto pb-10 ">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight text-slate-900">
+          <div className="flex justify-between items-center gap-3 ml-3 mt-4 text-xl font-extrabold tracking-tight text-slate-900">
             <Link href="/" >Groovy</Link>
           </div>
 
