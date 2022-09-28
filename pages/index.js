@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Explore from "../components/Explore/Explore";
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
         <meta name="description" content="An opensource music player" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Explore />
     </div>
   );
 }
