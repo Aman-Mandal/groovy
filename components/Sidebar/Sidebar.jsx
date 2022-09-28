@@ -10,7 +10,7 @@ const Sidebar = () => {
       {activeMenu && (
         <>
           <div className="flex justify-between items-center items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight text-slate-900">
-            <Link href="/">Groovy</Link>
+            <Link href="/" >Groovy</Link>
           </div>
 
           <div className="mt-10">
