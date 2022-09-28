@@ -18,7 +18,7 @@ const Sidebar = () => {
               <div key={item.title} className="flex flex-col">
                 <p className="text-gray-400 m-3 uppercase">{item.title}</p>
                 {item.links.map((link) => (
-                  <Link href={`/${link.name}Page`} key={link.name}>
+                  <Link href={`/${link.name}`} key={link.name}>
                     <div className="flex items-center gap-4 pl-3 py-3 rounded-lg text-md text-gray-700">
                       {link.icon}
                       <span className="capitalize">{link.name}</span>
