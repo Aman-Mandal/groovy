@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Explore from "../components/Explore/Explore";
+import Explore from "./Explore";
 
 export default function Home() {
   return (
