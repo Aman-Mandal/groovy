@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* color variables*/
+.swatch_1 {
+  background: #080809;
+}
+.swatch_2 {
+  background: #5b4040;
+}
+.swatch_3 {
+  background: #192cfd;
+}
+.swatch_4 {
+  background: #141c52;
+}
+.swatch_5 {
+  background: #234da3;
+}
+.swatch_6 {
+  background: #c88b85;
+}
+.swatch_7 {
+  background: #d7d1cf;
+}
+.swatch_8 {
+  background: #c52e1d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
