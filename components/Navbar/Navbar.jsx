@@ -25,6 +25,7 @@ const NavButton = ({ title, icon, func }) => {
     </Tooltip>
   );
 };
+
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between mt-4 px-8">
