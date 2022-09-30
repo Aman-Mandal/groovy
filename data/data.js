@@ -9,6 +9,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FolderIcon from "@mui/icons-material/Folder";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import kanye from "../public/kanye.jpeg";
+import dua from "../public/dua.jpeg";
+import billie from "../public/billie.jpg";
+import nicki from "../public/nicki.jpeg";
+import starboy from "../public/starboy.jpg";
+import travis from "../public/travis.png";
+import ed from "../public/ed.jpeg";
 
 export const links = [
   {
@@ -79,4 +86,51 @@ export const links = [
       },
     ],
   },
+];
+
+export const artists = [
+  {
+    name: "Travis Scott",
+    count: "44M Plays",
+    img: travis,
+  },
+  {
+    name: "Billie Ellish",
+    count: "203M Plays",
+    img: billie,
+  },
+  {
+    name: "Dua Lipa",
+    count: "63M Plays",
+    img: dua,
+  },
+  {
+    name: "Kanye",
+    count: "15M Plays",
+    img: kanye,
+  },
+  {
+    name: "Nicki Minaj",
+    count: "180M Plays",
+    img: nicki,
+  },
+  {
+    name: "Starboy",
+    count: "100M Plays",
+    img: starboy,
+  },
+  {
+    name: "Ed Sheeran",
+    count: "100M Plays",
+    img: ed,
+  },
+];
+
+export const genres = [
+  "Dance Beat",
+  "Electro Pop",
+  "Alternative Indie",
+  "Hip Hop",
+  "Classical Period",
+  "Hip Hop Rap",
 ];
