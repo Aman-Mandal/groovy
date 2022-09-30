@@ -28,7 +28,7 @@ const NavButton = ({ title, icon, func }) => {
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between mt-4 px-8">
+    <div className="flex items-center justify-between my-4 px-8">
       <div className="flex items-center gap-32">
         <div className="flex items-center gap-8">
           <Link href="/">
