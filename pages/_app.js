@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }) => {
           <Sidebar />
         </div>
 
-        <div className="min-h-screen w-full ml-80">
+        <div className="min-h-screen w-full ml-80 bg-woman-in-black bg-contain bg-right bg-no-repeat">
           <div className="w-full">
             <Navbar />
           </div>
