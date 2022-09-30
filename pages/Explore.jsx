@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import TopArtists from "../components/TopArtists/TopArtists";
 
 const Explore = () => {
   return (
-    <div>Explore</div>
-  )
-}
+    <div>
+      <TopArtists />
+    </div>
+  );
+};
 
-export default Explore
+export default Explore;
