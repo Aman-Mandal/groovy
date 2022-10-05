@@ -2,7 +2,6 @@ import Head from "next/head";
 import Explore from "./Explore";
 
 export default function Home() {
-
   return (
     <div>
       <Head>
