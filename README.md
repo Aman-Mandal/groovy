@@ -77,6 +77,8 @@ No worries!! Here's a quick guide,
 10. Make appropriate changes if the maintainer recommends you to and submit it.
 11. And Ohhhh Damnn..celebrate your success after your pull request is merged.
 
+Checkout the [Contributing.md](CONTRIBUTING.md) file before contributing.
+
 ### Where can I go for help?
 
 If you need help, you can ask questions on our twitter for now :
