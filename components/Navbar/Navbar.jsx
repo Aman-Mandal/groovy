@@ -50,7 +50,9 @@ const Navbar = () => {
   }, [screenSize]);
 
   return (
-    <div className={`w-full flex items-center justify-between my-4 px-8`}>
+    <div
+      className={`w-full flex items-center justify-between my-4 px-8 text-sm md:text-base`}
+    >
       <div className="flex items-center gap-32">
         <div className="flex items-center gap-8">
           <IconButton
@@ -61,28 +63,22 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Link href="/">
-            <a className="uppercase text-lg font-light swatch_text-secondary">
-              music
-            </a>
+            <a className="uppercase font-light swatch_text-secondary">music</a>
           </Link>
           <Link href="/">
-            <a className="uppercase text-lg font-light swatch_text-primary">
-              podcast
-            </a>
+            <a className="uppercase font-light swatch_text-primary">podcast</a>
           </Link>
           <Link href="/">
-            <a className="uppercase text-lg font-light swatch_text-primary">
-              live
-            </a>
+            <a className="uppercase font-light swatch_text-primary">live</a>
           </Link>
         </div>
 
-        <div className="flex items-center p-3 gap-2 border-[1px] border-gray-500 rounded-md swatch_bg-brown">
+        <div className="hidden lg:flex items-center p-3 gap-2 border-[1px] border-gray-500 rounded-md swatch_bg-brown">
           <SearchIcon className="text-gray-300" fontSize="small" />
           <input
             type="text"
             placeholder="Type here to search"
-            className="outline-none border-none text-gray-300 placeholder-gray-300 bg-transparent text-sm"
+            className="outline-none border-none text-gray-300 placeholder-gray-300 bg-transparent"
           />
         </div>
       </div>
