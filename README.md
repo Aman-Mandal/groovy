@@ -79,6 +79,7 @@ No worries!! Here's a quick guide,
 
 Checkout the [Contributing.md](CONTRIBUTING.md) file before contributing.
 
+
 ### Where can I go for help?
 
 If you need help, you can ask questions on our twitter for now :
@@ -89,6 +90,11 @@ If you need help, you can ask questions on our twitter for now :
 ## Credits
 
 - UI credits : [https://dribbble.com/shots/11139802-Dark-Mode-Music-Player-Web-App](https://dribbble.com/shots/11139802-Dark-Mode-Music-Player-Web-App)
+
+
+## License
+
+[MIT](LICENSE.md)
 
 
 ## Your Support means a lot
