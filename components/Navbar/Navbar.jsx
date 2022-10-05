@@ -38,7 +38,6 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
 
     handleResize();
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -51,11 +50,7 @@ const Navbar = () => {
   }, [screenSize]);
 
   return (
-    <div
-      className={`flex items-center justify-between my-4 px-8 ${
-        activeMenu ? "md:ml-80" : "flex-2"
-      }`}
-    >
+    <div className={`w-full flex items-center justify-between my-4 px-8`}>
       <div className="flex items-center gap-32">
         <div className="flex items-center gap-8">
           <IconButton

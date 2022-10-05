@@ -7,17 +7,11 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ContextProvider>
       {/* set active menu */}
-      <div className="flex">
-        <Sidebar />
-
-        <div className="min-h-screen w-full bg-woman-in-black bg-contain bg-right bg-no-repeat">
-          <div className="w-full">
-            <Navbar />
-          </div>
-
-          <div>
-            <Component {...pageProps} />
-          </div>
+      <div className="w-full flex">
+        {<Sidebar />}
+        <div className="w-full bg-woman-in-black bg-contain bg-right bg-no-repeat flex flex-col z-10 overscroll-none">
+          <Navbar />
+          <Component {...pageProps} />
         </div>
       </div>
     </ContextProvider>
