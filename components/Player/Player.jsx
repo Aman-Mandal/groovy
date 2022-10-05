@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import Image from "next/image";
 import travis from "../../public/travis.png";
@@ -13,7 +13,56 @@ import { useStateContext } from "../../contexts/ContextProvider";
 
 const Player = () => {
   const { homePlayerToggle, setHomePlayerToggle } = useStateContext();
-  const playerHandler = () => {};
+  const [currentTime, setCurrentTime] = useState(null);
+  const [duration, setDuration] = useState(0);
+  const [progressTime, setProgressTime] = useState(0);
+  const [audio, setAudio] = useState(null);
+
+  // const audio2 = new Audio("/sample_music.mp3");
+
+  useEffect(() => {
+    setAudio(new Audio("/sample_music.mp3"));
+  }, []);
+
+  useEffect(() => {
+    let key;
+
+    key = setInterval(() => {
+      setDuration(audio?.duration);
+      setCurrentTime(audio?.currentTime);
+      setProgressTime((audio?.currentTime / audio?.duration) * 100);
+    }, 1000);
+
+    if (progressTime === 100) {
+      setHomePlayerToggle(false);
+      setProgressTime(0);
+      setCurrentTime(0);
+    }
+
+    return () => clearTimeout(key);
+  }, [audio, audio?.currentTime, progressTime, setHomePlayerToggle]);
+
+  const playerHandler = () => {
+    if (homePlayerToggle) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+  };
+
+  let min_duration = Math.floor(duration / 60);
+  let sec_duration = Math.floor(duration % 60);
+
+  let min_currentTime = Math.floor(currentTime / 60);
+  let sec_currentTime = Math.floor(currentTime % 60);
+
+  if (sec_currentTime < 10) {
+    sec_currentTime = `0${sec_currentTime}`;
+  }
+
+  if (sec_duration < 10) {
+    sec_duration = `0${sec_duration}`;
+  }
 
   return (
     <div className="row-span-3 swatch_bg-brown w-full flex flex-col rounded-lg">
@@ -27,7 +76,7 @@ const Player = () => {
 
         <div className="py-3 px-3 text-white">
           <div>
-            <div className="my-2">
+            <div className="my-3">
               <Image
                 src={travis}
                 width={240}
@@ -43,12 +92,15 @@ const Player = () => {
 
           <div className="w-full h-auto py-3 px-8 text-xs my-3">
             <div className="flex justify-between">
-              <div>0:00</div>
+              <div>{`${min_currentTime}:${sec_currentTime}`}</div>
               <div className="progress_div flex items-center">
-                <div className="top-0 left-0 w-6/12 h-full bg-white"></div>
+                <div
+                  className={`top-0 left-0 h-full bg-white`}
+                  style={{ width: Math.floor(progressTime) + "%" }}
+                ></div>
                 <div className="border-[3px] border-white w-4 h-4 rounded-full bg-black" />
               </div>
-              <div className="duration">3:00</div>
+              <div className="duration">{`${min_duration}:${sec_duration}`}</div>
             </div>
           </div>
         </div>
@@ -70,7 +122,7 @@ const Player = () => {
             }}
           >
             <span className="text-player">
-              {homePlayerToggle ? <PlayArrowIcon /> : <PauseIcon />}
+              {homePlayerToggle ? <PauseIcon /> : <PlayArrowIcon />}
             </span>
           </div>
           <div className="text-white cursor-pointer">
@@ -94,4 +146,4 @@ const Player = () => {
   );
 };
 
-export default Player;
+export default React.memo(Player);

@@ -92,10 +92,10 @@ a {
 
   border-radius: 4rem;
   position: relative;
-  transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -o-transition: all 1s linear;
-  -webkit-transition: all 1s linear;
+  transition: width 1s linear;
+  -moz-transition: width 1s linear;
+  -o-transition: width 1s linear;
+  -webkit-transition: width 1s linear;
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
