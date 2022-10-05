@@ -8,11 +8,9 @@ const MyApp = ({ Component, pageProps }) => {
     <ContextProvider>
       {/* set active menu */}
       <div className="flex">
-        <div className="sidebar w-80 fixed">
-          <Sidebar />
-        </div>
+        <Sidebar />
 
-        <div className="min-h-screen w-full ml-80 bg-woman-in-black bg-contain bg-right bg-no-repeat">
+        <div className="min-h-screen w-full bg-woman-in-black bg-contain bg-right bg-no-repeat">
           <div className="w-full">
             <Navbar />
           </div>

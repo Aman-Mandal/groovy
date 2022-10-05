@@ -10,6 +10,8 @@ import Link from "next/link";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { useStateContext } from "../../contexts/ContextProvider";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const NavButton = ({ title, icon, func }) => {
   return (
@@ -27,10 +29,23 @@ const NavButton = ({ title, icon, func }) => {
 };
 
 const Navbar = () => {
+  const { activeMenu, setActiveMenu } = useStateContext();
+
   return (
-    <div className="flex items-center justify-between my-4 px-8">
+    <div
+      className={`flex items-center justify-between my-4 px-8 ${
+        activeMenu ? "md:ml-80" : "flex-2"
+      }`}
+    >
       <div className="flex items-center gap-32">
         <div className="flex items-center gap-8">
+          <IconButton
+            type="button"
+            className="relative swatch_text-primary rounded-full"
+            onClick={() => setActiveMenu((prev) => !prev)}
+          >
+            <MenuIcon />
+          </IconButton>
           <Link href="/">
             <a className="uppercase text-lg font-light swatch_text-secondary">
               music
