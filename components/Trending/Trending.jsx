@@ -15,7 +15,7 @@ const Trending = () => {
           <div className="flex gap-4 items-center">
             <p className="text-3xl text-gray-100">Camila Cabello</p>
             <span className="text-gray-400 text-xl tracking-tighter">
-              63Milliion Plays
+              63 Million Plays
             </span>
           </div>
         </div>
