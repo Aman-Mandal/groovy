@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import MenuIcon from "@mui/icons-material/Menu";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { IconButton } from "@mui/material";
+import Cross from "../svg/Cross";
 
 const activeLink =
   "flex items-center gap-4 pl-3 py-1 my-1 text-md cursor-pointer transition-colors duration-200 border-r-2 border-[#192cfd] text-[#192cfd] ";
@@ -24,8 +25,9 @@ const Sidebar = () => {
 
   return (
     activeMenu && (
-      <div className="z-10 sidebar w-80 fixed pl-3 h-screen overflow-auto pb-10 swatch_bg-brown">
-        <div className="flex justify-between items-center gap-3 ml-3 mt-7 text-xl font-extrabold tracking-tight text-slate-900">
+      <div className="z-10 fixed sidebar w-[300px] pl-3 overflow-auto pb-10 swatch_bg-brown">
+        <Cross onClick={() => setActiveMenu(false)} />
+        <div className="flex justify-between items-center gap-3 ml-3 text-xl font-extrabold tracking-tight text-slate-900">
           <Link href="/">
             <span className="text-2x text-gray-100">Groovy</span>
           </Link>

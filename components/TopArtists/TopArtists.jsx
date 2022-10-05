@@ -13,13 +13,18 @@ const TopArtists = () => {
         </Link>
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between overflow-auto py-2">
         {artists.map((artist) => (
-          <div className="flex flex-col items-center gap-2" key={artist.name}>
-            <div className="rounded-md w-28 h-28 overflow-hidden">
+          <div
+            className="flex flex-col items-center gap-2 hover:scale-105"
+            key={artist.name}
+          >
+            <div className="rounded-md w-max h-max overflow-hidden mx-2 cursor-pointer">
               <Image
                 src={artist.img}
                 alt={artist.name}
+                width={150}
+                height={150}
                 className="rounded-md w-full object-top"
               />
             </div>
