@@ -17,7 +17,6 @@ const Explore = () => {
     >
       <h2 className="text-2xl font-normal text-gray-100">Trending New Hits</h2>
 
-      <Trending />
 
       <div className="grid grid-cols-4 gap-4 mt-6">
         <TopArtists />
