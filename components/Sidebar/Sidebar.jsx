@@ -30,7 +30,7 @@ const Sidebar = () => {
         onClick={(event) => event.stopPropagation()}
       >
         <Cross onClick={() => setActiveMenu(false)} />
-        <div className="flex justify-between items-center gap-3 ml-3 text-xl font-extrabold tracking-tight text-slate-900">
+        <div className="flex justify-between items-center gap-3 ml-3 md:pt-0 pt-3 text-xl font-extrabold tracking-tight text-slate-900">
           <Link href="/">
             <span className="text-2x text-gray-100">Groovy</span>
           </Link>

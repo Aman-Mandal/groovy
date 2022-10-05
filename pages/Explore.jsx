@@ -10,7 +10,7 @@ const Explore = () => {
   const { activeMenu, setActiveMenu } = useStateContext();
 
   return (
-    <div className={`flex flex-col gap-4 mt-12 mx-8`}>
+    <div className={`flex flex-col gap-4 mt-12 px-8 ${activeMenu && 'md:ml-60'}`}>
       <h2 className="text-2xl font-normal text-gray-100">Trending New Hits</h2>
 
       <div className="grid grid-cols-4 gap-4 mt-6">
