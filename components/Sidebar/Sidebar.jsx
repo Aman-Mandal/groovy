@@ -27,7 +27,7 @@ const Sidebar = () => {
   return (
     activeMenu && (
       <div
-        className="z-50 fixed w-60 h-full sidebar px-3 pb-10 pt-2 swatch_bg-brown overflow-auto animate-slideRight"
+        className="z-50 fixed w-60 h-full sidebar px-3 pb-10 pt-2 swatch_bg-brown overflow-auto"
         onClick={(event) => event.stopPropagation()}
       >
         <Cross onClick={() => setActiveMenu(false)} />
