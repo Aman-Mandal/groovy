@@ -3,6 +3,7 @@ import { useStateContext } from "../../contexts/ContextProvider";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import MenuIcon from "@mui/icons-material/Menu";
+import CancelIcon from "@mui/icons-material/Cancel";
 import { IconButton } from "@mui/material";
 
 const activeLink =
@@ -15,6 +16,12 @@ const Sidebar = () => {
   const { activeMenu, setActiveMenu } = useStateContext();
   const router = useRouter();
 
+  const handleCloseSidebar = () => {
+    if (activeMenu && screenSize <= 900) {
+      setActiveMenu(false);
+    }
+  };
+
   return (
     activeMenu && (
       <div className="z-10 sidebar w-80 fixed pl-3 h-screen overflow-auto pb-10 swatch_bg-brown">
@@ -25,9 +32,9 @@ const Sidebar = () => {
           <IconButton
             type="button"
             onClick={() => setActiveMenu((prev) => !prev)}
-            className="text-xl rounded-full p-3 hover:bg-light-gray block md:hidden"
+            className="text-xl rounded-full px-3 block md:hidden"
           >
-            <MenuIcon className="text-2xl text-gray-100" />
+            <CancelIcon className="text-gray-100" />
           </IconButton>
         </div>
 
