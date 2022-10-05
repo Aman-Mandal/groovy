@@ -12,6 +12,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { useStateContext } from "../../contexts/ContextProvider";
 import MenuIcon from "@mui/icons-material/Menu";
+import NotificationModal from "../NotificationModal/NotificationModal";
 
 const NavButton = ({ title, icon, func }) => {
   return (
@@ -29,8 +30,14 @@ const NavButton = ({ title, icon, func }) => {
 };
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, screenSize, setScreenSize } =
-    useStateContext();
+  const {
+    activeMenu,
+    setActiveMenu,
+    screenSize,
+    setScreenSize,
+    isClicked,
+    handleClick,
+  } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -95,7 +102,7 @@ const Navbar = () => {
         <NavButton
           icon={<NotificationsIcon />}
           title={"Notifications"}
-          func={() => {}}
+          func={() => handleClick("notification")}
         />
         <NavButton icon={<SettingsIcon />} title={"Settings"} func={() => {}} />
 
@@ -111,6 +118,8 @@ const Navbar = () => {
             </span>
           </div>
         </Tooltip>
+
+        {isClicked.notification && <NotificationModal />}
       </div>
     </div>
   );
