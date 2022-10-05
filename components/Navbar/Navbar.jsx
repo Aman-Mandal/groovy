@@ -39,7 +39,7 @@ const Navbar = () => {
 
     handleResize();
 
-    return () => window.removeEventListscreenSizeener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
