@@ -12,6 +12,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { useStateContext } from "../../contexts/ContextProvider";
 import MenuIcon from "@mui/icons-material/Menu";
+import NotificationModal from "../NotificationModal/NotificationModal";
 
 const NavButton = ({ title, icon, func }) => {
   return (
@@ -29,11 +30,37 @@ const NavButton = ({ title, icon, func }) => {
 };
 
 const Navbar = () => {
-  const { setActiveMenu } = useStateContext();
+  const {
+    activeMenu,
+    setActiveMenu,
+    screenSize,
+    setScreenSize,
+    isClicked,
+    handleClick,
+  } = useStateContext();
+
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);
 
   return (
     <div
-      className={`w-full flex items-center justify-between my-4 px-8 text-sm md:text-base`}
+      className={`flex items-center justify-between my-4 px-8 ${
+        activeMenu && "md:ml-60"
+      }`}
     >
       <div className="flex items-center gap-32">
         <div className="flex items-center gap-8">
@@ -69,7 +96,7 @@ const Navbar = () => {
         <NavButton
           icon={<NotificationsIcon />}
           title={"Notifications"}
-          func={() => {}}
+          func={() => handleClick("notification")}
         />
         <NavButton icon={<SettingsIcon />} title={"Settings"} func={() => {}} />
 
@@ -85,6 +112,8 @@ const Navbar = () => {
             </span>
           </div>
         </Tooltip>
+
+        {isClicked.notification && <NotificationModal />}
       </div>
     </div>
   );

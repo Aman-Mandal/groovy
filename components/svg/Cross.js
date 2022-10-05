@@ -8,7 +8,7 @@ const Cross = (props) => {
       viewBox="0 0 24 24"
       style={{ strokeWidth: "2" }}
       stroke="currentColor"
-      className="w-6 h-6 text-white ml-auto m-4 cursor-pointer"
+      className="w-6 h-6 text-white ml-auto m-5 cursor-pointer md:block hidden"
     >
       <path
         style={{
