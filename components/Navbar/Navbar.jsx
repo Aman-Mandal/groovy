@@ -88,7 +88,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* <div className="flex items-center">
+      <div className="flex items-center">
         <NavButton
           icon={<NotificationsIcon />}
           title={"Notifications"}
@@ -108,7 +108,7 @@ const Navbar = () => {
             </span>
           </div>
         </Tooltip>
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -25,7 +25,10 @@ const Sidebar = () => {
 
   return (
     activeMenu && (
-      <div className="z-10 fixed sidebar w-[300px] pl-3 overflow-auto pb-10 swatch_bg-brown">
+      <div
+        className="z-50 fixed w-60 h-full sidebar pl-3 pb-10 swatch_bg-brown overflow-auto"
+        onClick={(event) => event.stopPropagation()}
+      >
         <Cross onClick={() => setActiveMenu(false)} />
         <div className="flex justify-between items-center gap-3 ml-3 text-xl font-extrabold tracking-tight text-slate-900">
           <Link href="/">

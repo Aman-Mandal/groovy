@@ -19,7 +19,7 @@ const TopArtists = () => {
             className="flex flex-col items-center gap-2 hover:scale-105"
             key={artist.name}
           >
-            <div className="rounded-md w-max h-max overflow-hidden mx-2 cursor-pointer">
+            <div className="rounded-md w-max h-max overflow-hidden mx-2 cursor-pointer z-10">
               <Image
                 src={artist.img}
                 alt={artist.name}

@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }) => {
       {/* set active menu */}
       <div className="w-full flex">
         {<Sidebar />}
-        <div className="w-full bg-woman-in-black bg-contain bg-right bg-no-repeat flex flex-col">
+        <div className="w-full bg-woman-in-black bg-contain bg-right bg-no-repeat flex flex-col z-10 overscroll-none">
           <Navbar />
           <Component {...pageProps} />
         </div>
