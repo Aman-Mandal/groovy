@@ -131,6 +131,9 @@ export const genres = [
   "Electro Pop",
   "Alternative Indie",
   "Hip Hop",
-  "Classical Period",
+  "Classical",
   "Hip Hop Rap",
+  "Country",
+  
+  
 ];
