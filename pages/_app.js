@@ -1,8 +1,8 @@
 import { ContextProvider } from "../contexts/ContextProvider";
-import Sidebar from "../components/Sidebar/Sidebar";
-import Navbar from "../components/Navbar/Navbar";
+import { Sidebar, Navbar } from "../components";
 import "../styles/globals.css";
 import { SessionProvider } from "next-auth/react";
+
 const MyApp = ({ Component, pageProps, session }) => {
   return (
     <SessionProvider session={session}>
