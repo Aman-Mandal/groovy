@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import MenuIcon from "@mui/icons-material/Menu";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { IconButton } from "@mui/material";
+import Cross from "../svg/Cross";
+import SearchIcon from "@mui/icons-material/Search";
 
 const activeLink =
   "flex items-center gap-4 pl-3 py-1 my-1 text-md cursor-pointer transition-colors duration-200 border-r-2 border-[#192cfd] text-[#192cfd] ";
@@ -24,8 +26,12 @@ const Sidebar = () => {
 
   return (
     activeMenu && (
-      <div className="z-10 sidebar w-80 fixed pl-3 h-screen overflow-auto pb-10 swatch_bg-brown">
-        <div className="flex justify-between items-center gap-3 ml-3 mt-7 text-xl font-extrabold tracking-tight text-slate-900">
+      <div
+        className="z-50 fixed w-60 h-full sidebar px-3 pb-10 pt-2 swatch_bg-brown overflow-auto"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <Cross onClick={() => setActiveMenu(false)} />
+        <div className="flex justify-between items-center gap-3 ml-3 md:pt-0 pt-3 text-xl font-extrabold tracking-tight text-slate-900">
           <Link href="/">
             <span className="text-2x text-gray-100">Groovy</span>
           </Link>
@@ -38,10 +44,19 @@ const Sidebar = () => {
           </IconButton>
         </div>
 
-        <div className="mt-10">
+        <div className="lg:hidden flex items-center p-3 gap-2 border-[1px] border-gray-500 rounded-md swatch_bg-brown my-3">
+          <SearchIcon className="text-gray-300" fontSize="small" />
+          <input
+            type="text"
+            placeholder="Type here to search"
+            className="outline-none border-none text-gray-300 placeholder-gray-300 bg-transparent"
+          />
+        </div>
+
+        <div className="my-3">
           {links.map((item) => (
             <div key={item.title} className="flex flex-col gap-2">
-              <p className="swatch_text-primary m-3 mb-1 mt-6  tracking-widest text-sm uppercase">
+              <p className="swatch_text-primary m-3 mb-1 tracking-widest text-sm uppercase">
                 {item.title}
               </p>
               {item.links.map((link) => (

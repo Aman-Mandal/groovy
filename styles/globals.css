@@ -7,7 +7,7 @@
   background: #080809;
 }
 .swatch_bg-brown {
-  background: #18181D;
+  background: #18181d;
 }
 .swatch_bg-secondary {
   background: #192cfd;
@@ -80,4 +80,23 @@ a {
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
+}
+
+.progress_div {
+  width: 70%;
+  margin: auto;
+  height: 0.2rem;
+  background-color: rgb(55, 54, 61);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07);
+
+  border-radius: 4rem;
+  position: relative;
+  transition: width 1s linear;
+  -moz-transition: width 1s linear;
+  -o-transition: width 1s linear;
+  -webkit-transition: width 1s linear;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
 }
