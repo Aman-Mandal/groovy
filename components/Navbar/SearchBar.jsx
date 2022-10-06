@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import SearchIcon from '@mui/icons-material/Search';
+import React, { useState } from "react";
+import SearchIcon from "@mui/icons-material/Search";
 
 function SearchBar({ placeholder, data }) {
   const [filterSongs, setFilterSongs] = useState([]);
-  const [wordEntered, setWordEntered] = useState('');
+  const [wordEntered, setWordEntered] = useState("");
 
   function handleFilter(event) {
     const searchWord = event.target.value;
@@ -12,7 +12,7 @@ function SearchBar({ placeholder, data }) {
       return item.title.toLowerCase().includes(searchWord.toLowerCase());
     });
 
-    if (searchWord === '') {
+    if (searchWord === "") {
       setFilterSongs([]);
     } else {
       setFilterSongs(newFilter);
@@ -20,32 +20,36 @@ function SearchBar({ placeholder, data }) {
   }
 
   return (
-    <div>
-      <form className='search'>
-        <div>
-          <input
-            className='outline-none  border-none text-gray-300 placeholder-gray-300 bg-transparent'
-            type='text'
-            placeholder={placeholder}
-            onChange={handleFilter}
-            value={wordEntered}
-          />
-          <SearchIcon className='text-gray-300' fontSize='small' />
-        </div>
-
-        {filterSongs?.length != 0 && (
-          <div className='dataItems'>
-            {filterSongs.slice(0, 15).map((item, key) => {
-              return (
-                <a href={item.artist} className='text-gray-300'>
-                  <p>{item.title}</p>
-                </a>
-              );
-            })}
+    <>
+      <div className="w-60">
+        <form className="search w-full">
+          <div className="w-full flex items-center justify-start ">
+            <input
+              className="outline-none w-full border-none text-gray-300 placeholder-gray-300 bg-transparent"
+              type="text"
+              placeholder={placeholder}
+              onChange={handleFilter}
+              value={wordEntered}
+            />
+            <SearchIcon
+              className="text-gray-300 cursor-pointer"
+              fontSize="small"
+            />
           </div>
-        )}
-      </form>
-    </div>
+        </form>
+      </div>
+      {filterSongs?.length != 0 && (
+        <ul className="dataItems bg-white absolute -bottom-[6.5rem] left-0 w-full">
+          {filterSongs.slice(0, 15).map((item, key) => {
+            return (
+              <li href={item.artist} key={key} className="text-gray-800">
+                {item.title}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </>
   );
 }
 

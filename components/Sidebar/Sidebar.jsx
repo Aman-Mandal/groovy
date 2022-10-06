@@ -2,7 +2,6 @@ import { links } from "../../data/data";
 import { useStateContext } from "../../contexts/ContextProvider";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import MenuIcon from "@mui/icons-material/Menu";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { IconButton } from "@mui/material";
 import Cross from "../svg/Cross";

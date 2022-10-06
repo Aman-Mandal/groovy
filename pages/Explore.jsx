@@ -1,9 +1,4 @@
-import React from "react";
-import Trending from "../components/Trending/Trending";
-import TopArtists from "../components/TopArtists/TopArtists";
-import Genres from "../components/Genres/Genres";
-import TopCharts from "../components/TopCharts/TopCharts";
-import Player from "../components/Player/Player";
+import { TopArtists, Genres, TopCharts, Player, Trending } from "../components";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Explore = () => {

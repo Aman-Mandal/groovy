@@ -12,10 +12,7 @@ const Trending = () => {
   const [noOfPlays, setNoOfPlays] = useState(songs[0].noOfPlays);
   const noOfSongs = songs.length;
   useEffect(() => {
-    console.log(index);
     const dots = document.getElementsByClassName("trend-circle");
-    // console.log(noOfSongs);
-    // console.log(dots.length);
     for (let x = 0; x < dots.length; x++) {
       dots[x].classList.remove("bg-gray-600");
       dots[x].classList.add("bg-gray-100");
@@ -41,7 +38,7 @@ const Trending = () => {
         </div>
 
         <div className="flex gap-5 items-center">
-          <button className="swatch_bg-secondaryLight text-gray-100 text-md p-4 px-6 rounded-full font-bold">
+          <button className="swatch_bg-secondaryLight text-gray-100 text-md p-4 px-6 rounded-full font-bold hover:bg-[#234DA2]/95">
             Listen Now
           </button>
           <button className="rounded-full p-2 border-2 border-gray-300">
