@@ -65,7 +65,7 @@ const Player = () => {
   }
 
   return (
-    <div className="row-span-3 swatch_bg-brown w-full flex flex-col rounded-lg">
+    <div className="row-span-2 col-span-2 swatch_bg-brown w-full flex flex-col rounded-lg">
       <div className="text-center">
         <div className="text-white flex justify-between p-3">
           <div>Player</div>

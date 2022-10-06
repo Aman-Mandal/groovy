@@ -14,8 +14,8 @@ const Trending = () => {
   useEffect(() => {
     console.log(index);
     const dots = document.getElementsByClassName("trend-circle");
-    console.log(noOfSongs);
-    console.log(dots.length);
+    // console.log(noOfSongs);
+    // console.log(dots.length);
     for (let x = 0; x < dots.length; x++) {
       dots[x].classList.remove("bg-gray-600");
       dots[x].classList.add("bg-gray-100");
@@ -29,7 +29,7 @@ const Trending = () => {
 
   return (
     <div className="flex items-center justify-between pl-6">
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <h1 className="text-7xl font-extrabold text-gray-100">{songName}</h1>
           <div className="flex gap-4 items-center">

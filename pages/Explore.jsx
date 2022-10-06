@@ -11,11 +11,11 @@ const Explore = () => {
 
   return (
     <div
-      className={`flex flex-col gap-4 mt-12 px-8 ${activeMenu && "md:ml-60"}`}
+      className={`flex flex-col gap-4 mt-8 px-8 ${activeMenu && "md:ml-72"}`}
     >
       <Trending />
 
-      <div className="grid grid-cols-4 gap-4 mt-6">
+      <div className="grid grid-cols-6 gap-x-6 gap-4 mt-2">
         <TopArtists />
         <Player />
         <Genres />

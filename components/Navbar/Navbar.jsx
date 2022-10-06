@@ -85,7 +85,7 @@ const Navbar = () => {
   return (
     <div
       className={`flex items-center justify-between my-4 px-8 ${
-        activeMenu && "md:ml-60"
+        activeMenu && "md:ml-72"
       }`}
     >
       <div className="flex items-center gap-32">

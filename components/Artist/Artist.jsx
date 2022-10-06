@@ -3,14 +3,14 @@ import React from "react";
 
 const Artist = ({ img, name, count }) => {
   return (
-    <div className="flex flex-col items-center gap-2 cursor-pointer  hover:scale-105 transition-all ease-in">
-      <div className="rounded-md w-max h-max overflow-hidden mx-2  z-10">
+    <div className="flex flex-col items-center gap-2 cursor-pointer hover:scale-105 transition-all ease-in">
+      <div className="rounded-md w-max h-max overflow-hidden mx-2 z-10">
         <Image
           src={img}
           alt={name}
           width={120}
           height={120}
-          className="rounded-md object-center"
+          className="rounded-md object-cover"
         />
       </div>
 

@@ -27,7 +27,7 @@ const Sidebar = () => {
   return (
     activeMenu && (
       <div
-        className="z-50 fixed w-60 h-full sidebar px-3 pb-10 pt-2 swatch_bg-brown overflow-auto"
+        className="z-50 fixed w-72 h-full sidebar pl-4 pb-10 pt-2 swatch_bg-brown overflow-auto"
         onClick={(event) => event.stopPropagation()}
       >
         <Cross onClick={() => setActiveMenu(false)} />
@@ -55,7 +55,7 @@ const Sidebar = () => {
 
         <div className="my-3">
           {links.map((item) => (
-            <div key={item.title} className="flex flex-col gap-2">
+            <div key={item.title} className="w-full flex flex-col gap-2 mb-5">
               <p className="swatch_text-primary m-3 mb-1 tracking-widest text-sm uppercase">
                 {item.title}
               </p>
