@@ -106,7 +106,7 @@ const Player = () => {
         </div>
       </div>
 
-      <div className="bg-player h-full flex flex-col justify-center rounded-b-lg">
+      <div className="bg-player h-full flex flex-col justify-center rounded-b-lg pt-5 pb-5">
         <div className="flex justify-around items-center px-5">
           <div className="text-white cursor-pointer">
             <RepeatIcon />

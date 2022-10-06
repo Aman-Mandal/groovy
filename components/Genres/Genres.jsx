@@ -15,14 +15,19 @@ const Genres = () => {
       </div>
 
       <div className="flex items-center flex-wrap gap-3 overflow-y-scroll">
-        {genres.map((genre) => (
-          <p
-            key={genre}
-            className={`swatch_bg-secondary text-lg rounded-lg font-semibold text-gray-100 p-4 ${activeMenu && 'text-sm'} `}
-          >
-            {genre}
-          </p>
-        ))}
+        {genres.map(
+          (genre, index) =>
+            index < 3 && (
+              <p
+                key={genre}
+                className={`swatch_bg-secondary text-lg rounded-lg font-semibold text-gray-100 p-4 ${
+                  activeMenu && "text-sm"
+                } `}
+              >
+                {genre}
+              </p>
+            ),
+        )}
       </div>
     </div>
   );
