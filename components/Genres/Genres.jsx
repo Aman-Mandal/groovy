@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { useStateContext } from "../../contexts/ContextProvider";
 import { genres } from "../../data/data";
 
 const Genres = () => {
+  const { activeMenu, setActiveMenu } = useStateContext();
+
   return (
     <div className="row-span-2 swatch_bg-brown p-4 rounded-md flex flex-col gap-4">
       <div className="flex items-center justify-between">
@@ -11,11 +14,11 @@ const Genres = () => {
         </Link>
       </div>
 
-      <div className="flex items-center flex-wrap gap-3 ">
+      <div className="flex items-center flex-wrap gap-3 overflow-y-scroll">
         {genres.map((genre) => (
           <p
             key={genre}
-            className="swatch_bg-secondary text-lg rounded-lg font-semibold text-gray-100 p-4"
+            className={`swatch_bg-secondary text-lg rounded-lg font-semibold text-gray-100 p-4 ${activeMenu && 'text-sm'} `}
           >
             {genre}
           </p>
