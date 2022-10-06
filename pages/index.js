@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="description" content="An opensource music player" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="overflow-auto pb-10">
+      <main className="overflow-auto">
         <Explore />
       </main>
     </>
