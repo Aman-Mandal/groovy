@@ -6,16 +6,11 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { songs } from "../../data/trendingSongsData";
 
 const Trending = () => {
-  // const index = 0;
   const [index, setIndex] = useState(0);
   const [songName, setSongName] = useState(songs[0].title);
   const [artist, setArtist] = useState(songs[0].artist);
   const [noOfPlays, setNoOfPlays] = useState(songs[0].noOfPlays);
   const noOfSongs = songs.length;
-  // const pagination = (i) => {
-  //   const dots = document.getElementsByClassName("rounded-full");
-  //   // console.log(dots);
-  // };
   useEffect(() => {
     console.log(index);
     const dots = document.getElementsByClassName("trend-circle");
