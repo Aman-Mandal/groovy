@@ -14,7 +14,7 @@ const TopArtists = () => {
         </Link>
       </div>
 
-      <div className="flex items-center justify-between overflow-auto py-2">
+      <div className="flex items-center justify-between  overflow-auto py-2">
         {artists.map((artist) => (
           <Artist name={artist.name} count={artist.count} img={artist.img} />
         ))}
