@@ -126,6 +126,34 @@ export const artists = [
   },
 ];
 
+export const charts = [
+  {
+    songName: "Havana",
+    artistName: "Travis Scott",
+    img: travis,
+    time: '3:45'
+  },
+  {
+    songName: "Jesum is king",
+    artistName: "Travis Scott",
+    img: billie,
+    time: '3:45'
+  },
+  {
+    songName: "Closer",
+    artistName: "Travis Scott",
+    img: dua,
+    time: '3:45'
+  },
+  {
+    songName: "Leon On",
+    artistName: "Travis Scott",
+    img: kanye,
+    time: '3:45'
+
+  },
+];
+
 export const genres = [
   "Dance Beat",
   "Electro Pop",

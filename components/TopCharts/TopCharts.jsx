@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { artists } from "../../data/data";
+import { charts } from "../../data/data";
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 const TopCharts = () => {
   return (
@@ -12,31 +13,30 @@ const TopCharts = () => {
           <a className="text-sm swatch_text-primary">See all</a>
         </Link>
       </div>
+      <div>
+        {charts.map((chart) => (
+          <div className="gap-2" style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }} key={chart.songName}>
+            <div className="rounded-md w-28 h-28 overflow-hidden">
+              <Image
+                src={chart.img}
+                alt={chart.songName}
+              />
+            </div>
 
-      <div className="flex items-center flex-wrap gap-3 ">
-        {artists.map(
-          (artist, index) =>
-            index < 4 && (
-              <div
-                className="flex flex-col items-center gap-2"
-                key={artist.name}
-              >
-                <div className="rounded-md w-28 h-28 overflow-hidden">
-                  <Image
-                    src={artist.img}
-                    alt={artist.name}
-                    className="rounded-md w-full object-top"
-                  />
-                </div>
-
-                <div className="flex-col items-center text-center">
-                  <p className="text-gray-200 text-md">{artist.name}</p>
-                  <p className="swatch_text-primary text-xs">{artist.count}</p>
-                </div>
+            <div style={{ display: 'flex' }}>
+              <div>
+                <p className="text-gray-200 text-md">{chart.songName}</p>
+                <small className="swatch_text-primary text-xs">{chart.artistName}</small>
               </div>
-            ),
-        )}
-      </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginLeft: '200px' }}>
+                <small className="swatch_text-primary text-xs mr-2">{chart.time}</small>
+                <p style={{ border: '1px solid #192CFD', borderRadius: '5px', padding: '0px 5px' }} className="swatch_text-primary text-xl mr-2">+</p>
+                <AddBoxIcon className="mr-2" style={{ color: 'white' }} />
+              </div>
+
+            </div>
+          </div>
+        ))}
     </div>
   );
 };
