@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
+import React, { useState } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
 
 function SearchBar({ placeholder, data }) {
   const [filterSongs, setFilterSongs] = useState([]);
-  const [wordEntered, setWordEntered] = useState("");
+  const [wordEntered, setWordEntered] = useState('');
 
   function handleFilter(event) {
     const searchWord = event.target.value;
@@ -12,7 +12,7 @@ function SearchBar({ placeholder, data }) {
       return item.title.toLowerCase().includes(searchWord.toLowerCase());
     });
 
-    if (searchWord === "") {
+    if (searchWord === '') {
       setFilterSongs([]);
     } else {
       setFilterSongs(newFilter);
@@ -21,23 +21,23 @@ function SearchBar({ placeholder, data }) {
 
   return (
     <div>
-      <form className="search">
+      <form className='search'>
         <div>
           <input
-            className="outline-none  border-none text-gray-300 placeholder-gray-300 bg-transparent"
-            type="text"
+            className='outline-none  border-none text-gray-300 placeholder-gray-300 bg-transparent'
+            type='text'
             placeholder={placeholder}
             onChange={handleFilter}
             value={wordEntered}
           />
-          <SearchIcon className="text-gray-300" fontSize="small" />
+          <SearchIcon className='text-gray-300' fontSize='small' />
         </div>
 
         {filterSongs?.length != 0 && (
-          <div className="dataItems">
+          <div className='dataItems'>
             {filterSongs.slice(0, 15).map((item, key) => {
               return (
-                <a href={item.artist} className="text-gray-300">
+                <a href={item.artist} className='text-gray-300'>
                   <p>{item.title}</p>
                 </a>
               );
