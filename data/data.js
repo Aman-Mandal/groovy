@@ -1,87 +1,87 @@
-import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
-import VolumeDownIcon from "@mui/icons-material/VolumeDown";
-import StopCircleIcon from "@mui/icons-material/StopCircle";
-import MicIcon from "@mui/icons-material/Mic";
-import RadioIcon from "@mui/icons-material/Radio";
-import ReplayIcon from "@mui/icons-material/Replay";
-import AlbumIcon from "@mui/icons-material/Album";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import FolderIcon from "@mui/icons-material/Folder";
-import AddBoxIcon from "@mui/icons-material/AddBox";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import kanye from "../public/kanye.jpeg";
-import dua from "../public/dua.jpeg";
-import billie from "../public/billie.jpg";
-import nicki from "../public/nicki.jpeg";
-import starboy from "../public/starboy.jpg";
-import travis from "../public/travis.png";
-import ed from "../public/ed.jpeg";
+import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
+import VolumeDownIcon from '@mui/icons-material/VolumeDown';
+import StopCircleIcon from '@mui/icons-material/StopCircle';
+import MicIcon from '@mui/icons-material/Mic';
+import RadioIcon from '@mui/icons-material/Radio';
+import ReplayIcon from '@mui/icons-material/Replay';
+import AlbumIcon from '@mui/icons-material/Album';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FolderIcon from '@mui/icons-material/Folder';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import kanye from '../public/kanye.jpeg';
+import dua from '../public/dua.jpeg';
+import billie from '../public/billie.jpg';
+import nicki from '../public/nicki.jpeg';
+import starboy from '../public/starboy.jpg';
+import travis from '../public/travis.png';
+import ed from '../public/ed.jpeg';
 
 export const links = [
   {
-    title: "Menu",
+    title: 'Menu',
     links: [
       {
-        name: "Explore",
+        name: 'Explore',
         icon: <OfflineBoltIcon />,
       },
       {
-        name: "Genres",
+        name: 'Genres',
         icon: <VolumeDownIcon />,
       },
       {
-        name: "Albums",
+        name: 'Albums',
         icon: <StopCircleIcon />,
       },
       {
-        name: "Artists",
+        name: 'Artists',
         icon: <MicIcon />,
       },
       {
-        name: "Radio",
+        name: 'Radio',
         icon: <RadioIcon />,
       },
     ],
   },
 
   {
-    title: "Library",
+    title: 'Library',
     links: [
       {
-        name: "Recent",
+        name: 'Recent',
         icon: <ReplayIcon />,
       },
       {
-        name: "Albums",
+        name: 'Albums',
         icon: <AlbumIcon />,
       },
       {
-        name: "Favourites",
+        name: 'Favourites',
         icon: <FavoriteIcon />,
       },
       {
-        name: "Local",
+        name: 'Local',
         icon: <FolderIcon />,
       },
     ],
   },
   {
-    title: "Playlist",
+    title: 'Playlist',
     links: [
       {
-        name: "Create New",
+        name: 'Create New',
         icon: <AddBoxIcon />,
       },
       {
-        name: "Design Flow",
+        name: 'Design Flow',
         icon: <PlayCircleIcon />,
       },
       {
-        name: "Best of 2020",
+        name: 'Best of 2020',
         icon: <PlayCircleIcon />,
       },
       {
-        name: "Nigeria Jams",
+        name: 'Nigeria Jams',
         icon: <PlayCircleIcon />,
       },
     ],
@@ -90,78 +90,75 @@ export const links = [
 
 export const artists = [
   {
-    name: "Travis Scott",
-    count: "44M Plays",
+    name: 'Travis Scott',
+    count: '44M Plays',
     img: travis,
   },
   {
-    name: "Billie Ellish",
-    count: "203M Plays",
+    name: 'Billie Ellish',
+    count: '203M Plays',
     img: billie,
   },
   {
-    name: "Dua Lipa",
-    count: "63M Plays",
+    name: 'Dua Lipa',
+    count: '63M Plays',
     img: dua,
   },
   {
-    name: "Kanye",
-    count: "15M Plays",
+    name: 'Kanye',
+    count: '15M Plays',
     img: kanye,
   },
   {
-    name: "Nicki Minaj",
-    count: "180M Plays",
+    name: 'Nicki Minaj',
+    count: '180M Plays',
     img: nicki,
   },
   {
-    name: "Starboy",
-    count: "100M Plays",
+    name: 'Starboy',
+    count: '100M Plays',
     img: starboy,
   },
   {
-    name: "Ed Sheeran",
-    count: "100M Plays",
+    name: 'Ed Sheeran',
+    count: '100M Plays',
     img: ed,
   },
 ];
 
 export const charts = [
   {
-    songName: "Havana",
-    artistName: "Travis Scott",
+    songName: 'Havana',
+    artistName: 'Travis Scott',
     img: travis,
-    time: '3:45'
+    time: '3:45',
   },
   {
-    songName: "Jesum is king",
-    artistName: "Travis Scott",
+    songName: 'Jesum is king',
+    artistName: 'Billie Eilish',
     img: billie,
-    time: '3:45'
+    time: '3:45',
   },
   {
-    songName: "Closer",
-    artistName: "Travis Scott",
+    songName: 'Closer',
+    artistName: 'Dua Lipa',
     img: dua,
-    time: '3:45'
+    time: '3:45',
   },
   {
-    songName: "Leon On",
-    artistName: "Travis Scott",
+    songName: 'Leon On',
+    artistName: 'Kanye',
     img: kanye,
-    time: '3:45'
-
+    time: '3:45',
   },
 ];
 
 export const genres = [
-  "Dance Beat",
-  "Electro Pop",
-  "Alternative Indie",
-  "Hip Hop",
-  "Classical",
-  "Hip Hop Rap",
-  "Country",
-  
-  
+  'Dance Beat',
+  'Electro Pop',
+  'Alternative Indie',
+  'Hip Hop',
+  'Classical',
+  'Hip Hop Rap',
+  'Country',
 ];

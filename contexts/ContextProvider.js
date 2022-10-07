@@ -1,4 +1,5 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext } from 'react';
+import SampleImage from '../public/default_player_image.webp';
 
 const StateContext = createContext();
 
@@ -13,6 +14,11 @@ export const ContextProvider = ({ children }) => {
   const [screenSize, setScreenSize] = useState(undefined);
   const [isClicked, setIsClicked] = useState(initialState);
   const [homePlayerToggle, setHomePlayerToggle] = useState(false);
+  const [currentSong, setcurrentSong] = useState({
+    image: SampleImage,
+    title: 'sample',
+    artist: 'sample',
+  });
 
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true });
@@ -26,6 +32,8 @@ export const ContextProvider = ({ children }) => {
         isClicked,
         screenSize,
         homePlayerToggle,
+        currentSong,
+        setcurrentSong,
         setHomePlayerToggle,
         setScreenSize,
         initialState,
