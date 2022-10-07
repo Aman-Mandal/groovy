@@ -8,9 +8,9 @@ function SearchBar({ placeholder, data }) {
   function handleFilter(event) {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
-    const newFilter = data.filter((item) => {
-      return item.title.toLowerCase().includes(searchWord.toLowerCase());
-    });
+    const newFilter = data.filter((item) => 
+       item.title.toLowerCase().startsWith(searchWord.toLowerCase())
+    );
 
     if (searchWord === "") {
       setFilterSongs([]);
