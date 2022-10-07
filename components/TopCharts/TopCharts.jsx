@@ -33,7 +33,7 @@ const TopCharts = ({ topCharts }) => {
             index < 3 && (
               <div
                 className='gap-2 flex items-center justify-between mb-4'
-                key={chart.songName}
+                key={chart?.title}
                 onClick={() =>
                   selectSongHandler({
                     image: chart?.images.coverart,
@@ -43,12 +43,11 @@ const TopCharts = ({ topCharts }) => {
                 }
               >
                 <div className='flex items-center gap-3 cursor-pointer'>
-                  <div className='rounded-md w-16 h-16 overflow-hidden'>
+                  <div className='rounded-md w-16 h-16 overflow-hidden relative'>
                     <Image
                       src={chart?.images.coverart}
                       alt={chart?.title}
-                      width='100%'
-                      height='100%'
+                      layout='fill'
                     />
                   </div>
 

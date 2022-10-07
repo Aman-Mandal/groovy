@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     url: 'https://shazam.p.rapidapi.com/charts/track',
     params: { pageSize: '5', startFrom: '10' },
     headers: {
-      'X-RapidAPI-Key': NEXT_PUBLIC_RAPIDAPI_KEY,
+      'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPIDAPI_KEY,
       'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
     },
   };
