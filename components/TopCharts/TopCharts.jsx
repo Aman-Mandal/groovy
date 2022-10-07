@@ -47,8 +47,8 @@ const TopCharts = ({ topCharts }) => {
                     <Image
                       src={chart?.images.coverart}
                       alt={chart?.title}
-                      width={16}
-                      height={16}
+                      width='100%'
+                      height='100%'
                     />
                   </div>
 

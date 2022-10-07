@@ -12,7 +12,7 @@ const Explore = () => {
     try {
       const res = await axios.get('api/top/charts');
       const { data } = res;
-      setTopCharts(data.tracks);
+      setTopCharts(data.tracks)
     } catch (error) {
       console.log('yo', error);
     }
