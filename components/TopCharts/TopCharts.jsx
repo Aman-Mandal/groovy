@@ -5,8 +5,10 @@ import { charts } from '../../data/data';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useStateContext } from '../../contexts/ContextProvider';
 
-const TopCharts = () => {
+const TopCharts = ({ topCharts }) => {
   const { setcurrentSong } = useStateContext();
+
+  console.log(topCharts);
 
   const selectSongHandler = (song) => {
     setcurrentSong((prev) => {
@@ -26,7 +28,7 @@ const TopCharts = () => {
         </Link>
       </div>
       <div>
-        {charts.map(
+        {topCharts.map(
           (chart, index) =>
             index < 3 && (
               <div
@@ -34,30 +36,35 @@ const TopCharts = () => {
                 key={chart.songName}
                 onClick={() =>
                   selectSongHandler({
-                    image: chart.img,
-                    title: chart.songName,
-                    artist: chart.artistName,
+                    image: chart?.images.coverart,
+                    title: chart?.title,
+                    artist: chart?.artists[0].alias,
                   })
                 }
               >
                 <div className='flex items-center gap-3 cursor-pointer'>
                   <div className='rounded-md w-16 h-16 overflow-hidden'>
-                    <Image src={chart.img} alt={chart.songName} />
+                    <Image
+                      src={chart?.images.coverart}
+                      alt={chart?.title}
+                      width={16}
+                      height={16}
+                    />
                   </div>
 
                   <div className='flex flex-col'>
                     <p className='text-gray-100 text-lg font-medium'>
-                      {chart.songName}
+                      {chart?.title}
                     </p>
                     <small className='text-gray-400 text-xs'>
-                      {chart.artistName}
+                      {chart?.artists[0].alias}
                     </small>
                   </div>
                 </div>
                 <div className='flex'>
                   <div className='flex items-center gap-3'>
                     <small className='swatch_text-primary text-xs mr-2'>
-                      {chart.time}
+                      3:09
                     </small>
                     <p className='swatch_text-primary w-6 h-6 flex items-center justify-center text-xl mr-2 border-[1px] border-[#192CFD]'>
                       +
