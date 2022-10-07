@@ -7,7 +7,7 @@ import camila from '../public/camila.jpg';
 export const songs = [
   {
     title: 'In My Feelings',
-    artist: 'Camila Caebllo',
+    artist: 'Camila Cabello',
     noOfPlays: '63 Million',
     img: camila,
   },
