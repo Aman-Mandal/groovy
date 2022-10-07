@@ -20,7 +20,6 @@ export const ContextProvider = ({ children }) => {
     artist: 'sample',
   });
 
-  console.log(activeMenu);
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true });
   };
