@@ -30,10 +30,6 @@ export const links = [
         icon: <VolumeDownIcon />,
       },
       {
-        name: 'Albums',
-        icon: <StopCircleIcon />,
-      },
-      {
         name: 'Artists',
         icon: <MicIcon />,
       },
