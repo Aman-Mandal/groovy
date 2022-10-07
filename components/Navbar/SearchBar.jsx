@@ -39,7 +39,7 @@ function SearchBar({ placeholder, data }) {
         </form>
       </div>
       {filterSongs?.length != 0 && (
-        <ul className="dataItems bg-white absolute -bottom-[6.5rem] left-0 w-full">
+        <ul className="dataItems bg-white absolute top-[2.5rem] left-0 w-full">
           {filterSongs.slice(0, 15).map((item, key) => {
             return (
               <li href={item.artist} key={key} className="text-gray-800">
