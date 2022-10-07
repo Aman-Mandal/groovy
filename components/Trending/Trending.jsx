@@ -11,6 +11,7 @@ const Trending = () => {
   const [index, setIndex] = useState(0);
   const [songName, setSongName] = useState(songs[0].title);
   const [artist, setArtist] = useState(songs[0].artist);
+  const [img, setImg] = useState(songs[0].img);
   const [noOfPlays, setNoOfPlays] = useState(songs[0].noOfPlays);
   const noOfSongs = songs.length;
   const { setcurrentSong } = useStateContext();
@@ -25,6 +26,7 @@ const Trending = () => {
     dots[index].classList.add('bg-gray-600');
     setSongName(songs[index].title);
     setArtist(songs[index].artist);
+    setImg(songs[index].img);
     setNoOfPlays(songs[index].noOfPlays);
   }, [index]);
 
@@ -33,7 +35,7 @@ const Trending = () => {
       return {
         ...prev,
         ...song,
-        image: song.image ? song.image : SampleImage,
+        image: song.img ? song.img : SampleImage,
       };
     });
   };
@@ -58,6 +60,7 @@ const Trending = () => {
               selectSongHandler({
                 title: songName,
                 artist: artist,
+                img: img,
               })
             }
           >
