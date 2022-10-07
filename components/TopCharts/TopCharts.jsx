@@ -43,16 +43,18 @@ const TopCharts = ({ topCharts }) => {
                 }
               >
                 <div className='flex items-center gap-3 cursor-pointer'>
-                  <div className='rounded-md w-16 h-16 overflow-hidden relative'>
-                    <Image
-                      src={chart?.images.coverart}
-                      alt={chart?.title}
-                      layout='fill'
-                    />
+                  <div className='flex flex-col'>
+                    <div className='rounded-md w-16 h-16 overflow-hidden relative'>
+                      <Image
+                        src={chart?.images.coverart}
+                        alt={chart?.title}
+                        layout='fill'
+                      />
+                    </div>
                   </div>
 
                   <div className='flex flex-col'>
-                    <p className='text-gray-100 text-lg font-medium'>
+                    <p className='line-clamp text-gray-100 text-lg font-medium min-w-[75px]'>
                       {chart?.title}
                     </p>
                     <small className='text-gray-400 text-xs'>
