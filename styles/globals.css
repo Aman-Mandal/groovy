@@ -101,7 +101,7 @@ a {
   appearance: none;
 }
 
-.line-clamp {
+.line_clamp_3 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;

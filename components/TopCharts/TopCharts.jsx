@@ -54,7 +54,7 @@ const TopCharts = ({ topCharts }) => {
                   </div>
 
                   <div className='flex flex-col'>
-                    <p className='line-clamp text-gray-100 text-lg font-medium min-w-[75px]'>
+                    <p className='line_clamp_3 text-gray-100 text-lg font-medium min-w-[75px]'>
                       {chart?.title}
                     </p>
                     <small className='text-gray-400 text-xs'>
