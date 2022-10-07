@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { TopArtists, Genres, TopCharts, Player, Trending } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
+import axios from 'axios';
 
-const Explore = () => {
+const Explore = ({ topCharts }) => {
   const { activeMenu, setActiveMenu } = useStateContext();
 
   return (
@@ -16,10 +18,22 @@ const Explore = () => {
         <TopArtists />
         <Player />
         <Genres />
-        <TopCharts />
+        <TopCharts topCharts={topCharts} />
       </div>
     </div>
   );
 };
 
 export default Explore;
+
+export async function getStaticProps() {
+  const res = await axios.get('api/top/charts');
+  const { data } = res;
+  // console.log('yoo', data);
+
+  return {
+    props: {
+      topCharts: data,
+    },
+  };
+}

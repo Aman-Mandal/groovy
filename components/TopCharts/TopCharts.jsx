@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { charts } from '../../data/data';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useStateContext } from '../../contexts/ContextProvider';
+
 const TopCharts = () => {
   const { setcurrentSong } = useStateContext();
 
