@@ -100,3 +100,10 @@ a {
   -webkit-appearance: none;
   appearance: none;
 }
+
+.line_clamp_3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+}

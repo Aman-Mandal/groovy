@@ -33,8 +33,10 @@ const Explore = () => {
       <div className='grid grid-cols-6 gap-x-6 gap-4 mt-2'>
         <TopArtists />
         <Player />
-        <Genres />
-        <TopCharts topCharts={topCharts} />
+        <div className='grid col-span-4 lg:grid-cols-2 xl:grid-cols-4 row-span-1 rounded-md flex flex-col gap-4 mt-2'>
+          <Genres />
+          <TopCharts topCharts={topCharts} />
+        </div>
       </div>
     </div>
   );
