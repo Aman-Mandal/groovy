@@ -15,6 +15,7 @@
     "@heroicons/react": "^1.0.6",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.7",
+    "axios": "^1.1.2",
     "classnames": "^2.3.2",
     "next": "^12.3.1",
     "next-auth": "^4.12.3",

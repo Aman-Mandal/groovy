@@ -1,11 +1,14 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { charts } from '../../data/data';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useStateContext } from '../../contexts/ContextProvider';
-const TopCharts = () => {
+
+const TopCharts = ({ topCharts }) => {
   const { setcurrentSong } = useStateContext();
+
+  console.log(topCharts);
 
   const selectSongHandler = (song) => {
     setcurrentSong((prev) => {
@@ -25,38 +28,44 @@ const TopCharts = () => {
         </Link>
       </div>
       <div>
-        {charts.map(
+        {topCharts.map(
           (chart, index) =>
             index < 3 && (
               <div
                 className='gap-2 flex items-center justify-between mb-4'
-                key={chart.songName}
+                key={chart?.title}
                 onClick={() =>
                   selectSongHandler({
-                    image: chart.img,
-                    title: chart.songName,
-                    artist: chart.artistName,
+                    image: chart?.images.coverart,
+                    title: chart?.title,
+                    artist: chart?.artists[0].alias,
                   })
                 }
               >
                 <div className='flex items-center gap-3 cursor-pointer'>
-                  <div className='rounded-md w-16 h-16 overflow-hidden'>
-                    <Image src={chart.img} alt={chart.songName} />
+                  <div className='flex flex-col'>
+                    <div className='rounded-md w-16 h-16 overflow-hidden relative'>
+                      <Image
+                        src={chart?.images.coverart}
+                        alt={chart?.title}
+                        layout='fill'
+                      />
+                    </div>
                   </div>
 
                   <div className='flex flex-col'>
-                    <p className='text-gray-100 text-lg font-medium'>
-                      {chart.songName}
+                    <p className='line_clamp_3 text-gray-100 text-lg font-medium min-w-[75px]'>
+                      {chart?.title}
                     </p>
                     <small className='text-gray-400 text-xs'>
-                      {chart.artistName}
+                      {chart?.artists[0].alias}
                     </small>
                   </div>
                 </div>
                 <div className='flex'>
                   <div className='flex items-center gap-3'>
                     <small className='swatch_text-primary text-xs mr-2'>
-                      {chart.time}
+                      3:09
                     </small>
                     <p className='swatch_text-primary w-6 h-6 flex items-center justify-center text-xl mr-2 border-[1px] border-[#192CFD]'>
                       +

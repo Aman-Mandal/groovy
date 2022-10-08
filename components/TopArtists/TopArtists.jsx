@@ -13,12 +13,12 @@ const TopArtists = () => {
       </div>
 
       <div className='flex items-center justify-between  overflow-auto py-2'>
-        {artists.map((artist, index) => (
+        {artists.map((artist, key) => (
           <Artist
-            key={index}
             name={artist.name}
             count={artist.count}
             img={artist.img}
+            key={key}
           />
         ))}
       </div>
