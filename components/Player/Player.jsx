@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from "react";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import Image from "next/image";
-import RepeatIcon from "@mui/icons-material/Repeat";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
-import ShuffleIcon from "@mui/icons-material/Shuffle";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import PauseIcon from "@mui/icons-material/Pause";
 import { useStateContext } from "../../contexts/ContextProvider";
+import PlayerControls from "./PlayerControls";
 
 const Player = () => {
   const {
-    homePlayerToggle,
+    audio,
+    setAudio,
     setHomePlayerToggle,
     currentSong,
   } = useStateContext();
   const [currentTime, setCurrentTime] = useState(null);
   const [duration, setDuration] = useState(0);
   const [progressTime, setProgressTime] = useState(0);
-  const [audio, setAudio] = useState(null);
 
   useEffect(() => {
     setAudio(new Audio("/sample_music.mp3"));
@@ -42,14 +38,6 @@ const Player = () => {
 
     return () => clearTimeout(key);
   }, [audio, audio?.currentTime, progressTime, setHomePlayerToggle]);
-
-  const playerHandler = () => {
-    if (homePlayerToggle) {
-      audio.pause();
-    } else {
-      audio.play();
-    }
-  };
 
   let min_duration = Math.floor(duration / 60);
   let sec_duration = Math.floor(duration % 60);
@@ -108,32 +96,7 @@ const Player = () => {
       </div>
 
       <div className="bg-player h-full flex flex-col justify-center rounded-b-lg pt-5 pb-5">
-        <div className="flex justify-around items-center px-5">
-          <div className="text-white cursor-pointer">
-            <RepeatIcon />
-          </div>
-          <div className="text-white cursor-pointer">
-            <SkipPreviousIcon />
-          </div>
-          <div
-            className="h-14 w-14 rounded-2xl flex items-center justify-center bg-white cursor-pointer"
-            onClick={() => {
-              setHomePlayerToggle((prev) => !prev);
-              playerHandler();
-            }}
-          >
-            <span className="text-player">
-              {homePlayerToggle ? <PauseIcon /> : <PlayArrowIcon />}
-            </span>
-          </div>
-          <div className="text-white cursor-pointer">
-            <SkipNextIcon />
-          </div>
-          <div className="text-white cursor-pointer">
-            <ShuffleIcon />
-          </div>
-        </div>
-
+        <PlayerControls />
         <div className="flex flex-col items-center text-white mt-4 font-semibold">
           <span className="text-center cursor-pointer group">
             <div className="group-hover:-translate-y-1">
