@@ -1,14 +1,33 @@
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { charts } from '../../data/data';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useStateContext } from '../../contexts/ContextProvider';
+import axios from 'axios';
 
-const TopCharts = ({ topCharts }) => {
+const TopCharts = () => {
   const { setcurrentSong } = useStateContext();
+  const [topCharts, setTopCharts] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
 
-  console.log(topCharts);
+  // api fetch
+  const getTopCharts = async () => {
+    try {
+      const res = await axios.get('api/top/charts');
+      const { data } = res;
+      // console.log(data);
+      setTopCharts(data);
+      setIsFetching(false);
+    } catch (error) {
+      console.log('yo', error);
+    }
+  };
+
+  useEffect(() => {
+    setIsFetching(true);
+    getTopCharts();
+  }, []);
 
   const selectSongHandler = (song) => {
     setcurrentSong((prev) => {
@@ -19,6 +38,12 @@ const TopCharts = ({ topCharts }) => {
     });
   };
 
+  if (isFetching)
+    return (
+      <div className='row-span-1 col-span-2 swatch_bg-brown rounded-md flex items-center justify-center'>
+        <p className='text-white font-semibold text-2xl'>loading....</p>;
+      </div>
+    );
   return (
     <div className='row-span-1 col-span-2 swatch_bg-brown p-4 rounded-md flex flex-col gap-4 overflow-y-scroll'>
       <div className='flex items-center justify-between'>
@@ -30,7 +55,7 @@ const TopCharts = ({ topCharts }) => {
       <div>
         {topCharts.map(
           (chart, index) =>
-            index < 3 && (
+            index < 4 && (
               <div
                 className='gap-2 flex items-center justify-between mb-4'
                 key={chart?.title}
