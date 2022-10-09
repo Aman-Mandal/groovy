@@ -5,7 +5,7 @@ import { charts } from '../../data/data';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useStateContext } from '../../contexts/ContextProvider';
 import axios from 'axios';
-
+import AddIcon from '@mui/icons-material/Add';
 const TopCharts = () => {
   const { setcurrentSong } = useStateContext();
   const [topCharts, setTopCharts] = useState([]);
@@ -89,9 +89,7 @@ const TopCharts = () => {
             <div className='flex'>
               <div className='flex items-center gap-3'>
                 <small className='swatch_text-primary text-xs mr-2'>3:09</small>
-                <p className='swatch_text-primary w-6 h-6 flex items-center justify-center text-xl mr-2 border-[1px] border-[#192CFD]'>
-                  +
-                </p>
+                  <AddIcon fontSize="small"  className='swatch_text-primary flex items-center justify-center text-xl mr-2 border-[1px] border-[#192CFD]' />
                 <AddBoxIcon className='mr-2 text-gray-400' />
               </div>
             </div>
