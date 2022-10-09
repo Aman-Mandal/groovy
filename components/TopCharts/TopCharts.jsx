@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { charts } from '../../data/data';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useStateContext } from '../../contexts/ContextProvider';
 import axios from 'axios';
@@ -13,19 +12,18 @@ const TopCharts = () => {
 
   // api fetch
   const getTopCharts = async () => {
+    setIsFetching(true);
     try {
-      const res = await axios.get('api/top/charts');
-      const { data } = res;
-      // console.log(data);
+      const { data } = await axios.get('api/top/charts');
+
       setTopCharts(data);
-      setIsFetching(false);
     } catch (error) {
-      console.log('yo', error);
+      console.log('getTopCharts error: ', error);
     }
+    setIsFetching(false);
   };
 
   useEffect(() => {
-    setIsFetching(true);
     getTopCharts();
   }, []);
 
@@ -53,10 +51,10 @@ const TopCharts = () => {
         </Link>
       </div>
       <div className='overflow-y-scroll max-h-80'>
-        {topCharts.map((chart, index) => (
+        {topCharts.map((chart) => (
           <div
             className='gap-2 flex items-center justify-between mb-4'
-            key={chart?.title}
+            key={chart.key}
             onClick={() =>
               selectSongHandler({
                 image: chart?.images.coverart,
@@ -89,7 +87,10 @@ const TopCharts = () => {
             <div className='flex'>
               <div className='flex items-center gap-3'>
                 <small className='swatch_text-primary text-xs mr-2'>3:09</small>
-                  <AddIcon fontSize="small"  className='swatch_text-primary flex items-center justify-center text-xl mr-2 border-[1px] border-[#192CFD]' />
+                <AddIcon
+                  fontSize='small'
+                  className='swatch_text-primary flex items-center justify-center text-xl mr-2 border-[1px] border-[#192CFD]'
+                />
                 <AddBoxIcon className='mr-2 text-gray-400' />
               </div>
             </div>
