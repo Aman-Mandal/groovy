@@ -18,6 +18,7 @@ export const ContextProvider = ({ children }) => {
     image: SampleImage,
     title: 'sample',
     artist: 'sample',
+    song: 'smaple',
   });
 
   const handleClick = (clicked) => {
