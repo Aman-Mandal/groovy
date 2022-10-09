@@ -12,7 +12,8 @@ const Explore = () => {
     try {
       const res = await axios.get('api/top/charts');
       const { data } = res;
-      setTopCharts(data.tracks)
+      console.log(data);
+      setTopCharts(data);
     } catch (error) {
       console.log('yo', error);
     }
