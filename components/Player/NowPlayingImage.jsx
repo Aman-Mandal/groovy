@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import { useStateContext } from '../../contexts/ContextProvider';
 
-const NowPlayingImage = () => {
+const NowPlayingImage = ({ width, height }) => {
   const { currentSong } = useStateContext();
 
   return (
     <Image
       src={currentSong.image}
-      width={240}
-      height={180}
+      width={width}
+      height={height}
       alt='artist-image'
       className='object-cover object-top rounded-md'
     />
