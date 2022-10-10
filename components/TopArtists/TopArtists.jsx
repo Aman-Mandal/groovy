@@ -8,7 +8,7 @@ const TopArtists = () => {
   console.log(topTrending);
 
   return (
-    <div className='lg:col-span-4 col-span-full swatch_bg-brown p-4 rounded-md flex flex-col gap-4 w-full'>
+    <div className='lg:col-span-4 col-span-full swatch_bg-brown pt-4 pr-b pl-4 rounded-md flex flex-col gap-4 w-full'>
       {isFetching ? (
         <Loader />
       ) : (
