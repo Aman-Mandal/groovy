@@ -2,6 +2,7 @@ import { ContextProvider } from '../contexts/ContextProvider';
 import { Sidebar, Navbar, Footer } from '../components';
 import '../styles/globals.css';
 import { SessionProvider } from 'next-auth/react';
+import FloatingPlayer from '../components/Footer/FloatingPlayer';
 
 const MyApp = ({ Component, pageProps, session }) => {
   return (
@@ -14,6 +15,7 @@ const MyApp = ({ Component, pageProps, session }) => {
             <Navbar />
             <Component {...pageProps} />
             {/* <Footer /> */}
+            <FloatingPlayer />
           </div>
         </div>
       </ContextProvider>

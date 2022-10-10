@@ -1,5 +1,5 @@
-import { useState, createContext, useContext } from 'react';
-import SampleImage from '../public/default_player_image.webp';
+import { useState, createContext, useContext } from "react";
+import SampleImage from "../public/default_player_image.webp";
 
 const StateContext = createContext();
 
@@ -10,6 +10,7 @@ const initialState = {
 };
 
 export const ContextProvider = ({ children }) => {
+  const [audio, setAudio] = useState(null);
   const [activeMenu, setActiveMenu] = useState(false);
   const [screenSize, setScreenSize] = useState(undefined);
   const [isClicked, setIsClicked] = useState(initialState);
@@ -28,6 +29,8 @@ export const ContextProvider = ({ children }) => {
   return (
     <StateContext.Provider
       value={{
+        audio,
+        setAudio,
         activeMenu,
         setActiveMenu,
         isClicked,
