@@ -16,15 +16,15 @@ const TopCharts = () => {
     setIsFetching(true);
     try {
       const { data } = await axios.get('api/top/charts');
-
       setTopCharts(data);
+      setIsFetching(false);
     } catch (error) {
       console.log('getTopCharts error: ', error);
     }
-    setIsFetching(false);
   };
 
   useEffect(() => {
+    setIsFetching(true);
     getTopCharts();
   }, []);
 
@@ -39,7 +39,7 @@ const TopCharts = () => {
 
   return (
     <div className='row-span-1 col-span-2 swatch_bg-brown p-4 rounded-md flex flex-col gap-4'>
-      {!isFetching ? (
+      {isFetching ? (
         <Loader />
       ) : (
         <>
