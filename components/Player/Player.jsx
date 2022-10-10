@@ -7,12 +7,8 @@ import PlayerControls from './PlayerControls';
 import NowPlayingImage from './NowPlayingImage';
 
 const Player = () => {
-  const {
-    audio,
-    setAudio,
-    setHomePlayerToggle,
-    currentSong,
-  } = useStateContext();
+  const { audio, setAudio, setHomePlayerToggle, currentSong } =
+    useStateContext();
   const [currentTime, setCurrentTime] = useState(null);
   const [duration, setDuration] = useState(0);
   const [progressTime, setProgressTime] = useState(0);
@@ -56,7 +52,7 @@ const Player = () => {
   }
 
   return (
-    <div className='row-span-2 col-span-2 swatch_bg-brown w-full flex flex-col rounded-lg'>
+    <div className='hidden lg:flex row-span-2 col-span-2 swatch_bg-brown w-full  flex-col rounded-lg'>
       <div className='text-center'>
         <div className='text-white flex justify-between p-3 px-4'>
           <p className='text-lg text-gray-100 font-medium'>Player</p>
@@ -68,7 +64,7 @@ const Player = () => {
         <div className='py-3 px-3 text-white'>
           <div>
             <div className='my-3'>
-              <NowPlayingImage />
+              <NowPlayingImage width={240} height={240} />
             </div>
             <div className='text-3xl'>{currentSong.title}</div>
             <div className='text-lg'>{currentSong.artist}</div>
