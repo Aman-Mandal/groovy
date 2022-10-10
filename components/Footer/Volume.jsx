@@ -18,7 +18,7 @@ export default function Volume() {
 
   return (
     <Box sx={{ width: 200 }}>
-      <Stack spacing={2} direction='row' sx={{ mb: 1 }} alignItems='center'>
+      <Stack spacing={1} direction='row' sx={{ mb: 1 , ml:-1 }} alignItems='center'>
         <VolumeDown htmlColor={'#f7f2f2'} />
         <Slider aria-label='Volume' value={value} onChange={handleChange} />
         <VolumeUp htmlColor={'#f7f2f2'} />

@@ -85,15 +85,15 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Link href='/'>
-            <a className='uppercase font-light swatch_text-secondary'>music</a>
+            <a className='uppercase font-light swatch_text-secondary notMobile'>music</a>
           </Link>
           <Link href='/Podcast'>
-            <a className='uppercase font-light swatch_text-primary hover:text-blue-600 focus:text-blue-600'>
+            <a className='uppercase font-light swatch_text-primary hover:text-blue-600 focus:text-blue-600 notMobile'>
               podcast
             </a>
           </Link>
           <Link href='/'>
-            <a className='uppercase font-light swatch_text-primary'>live</a>
+            <a className='uppercase font-light swatch_text-primary notMobile'>live</a>
           </Link>
         </div>
 
@@ -108,7 +108,9 @@ const Navbar = () => {
           title={'Notifications'}
           func={() => handleClick('notification')}
         />
-        <NavButton icon={<SettingsIcon />} title={'Settings'} func={() => {}} />
+        <div className='notMobile'>
+          <NavButton icon={<SettingsIcon />} title={'Settings'} func={() => {}} />
+        </div>
         <div
           className='flex items-center space-x-4 
         justify-end text-gray-500'

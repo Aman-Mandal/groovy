@@ -107,3 +107,14 @@ a {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;  
 }
+
+.play-cust{
+    margin-left: -3.5rem;
+}
+
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+  .notMobile{
+    display: none !important;
+  }  
+}
