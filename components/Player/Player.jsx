@@ -18,8 +18,10 @@ const Player = () => {
   const [progressTime, setProgressTime] = useState(0);
 
   useEffect(() => {
-    setAudio(new Audio('/sample_music.mp3'));
-  }, []);
+    setAudio(new Audio(currentSong?.song?.hub?.actions[1]?.uri));
+    audio?.pause();
+    setHomePlayerToggle(false);
+  }, [currentSong]);
 
   useEffect(() => {
     let key;
@@ -56,8 +58,8 @@ const Player = () => {
   return (
     <div className='row-span-2 col-span-2 swatch_bg-brown w-full flex flex-col rounded-lg'>
       <div className='text-center'>
-        <div className='text-white flex justify-between p-3'>
-          <div>Player</div>
+        <div className='text-white flex justify-between p-3 px-4'>
+          <p className='text-lg text-gray-100 font-medium'>Player</p>
           <div className='cursor-pointer'>
             <QueueMusicIcon />
           </div>

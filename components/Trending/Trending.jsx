@@ -53,7 +53,7 @@ const Trending = () => {
           </div>
         </div>
 
-        <div className='flex gap-5 items-center'>
+        <div className='flex gap-5 items-center mt-4'>
           <button
             className='swatch_bg-secondaryLight text-gray-100 text-md p-4 px-6 rounded-full font-bold hover:bg-[#234DA2]/95'
             onClick={() =>

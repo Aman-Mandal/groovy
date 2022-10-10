@@ -17,8 +17,9 @@ export const ContextProvider = ({ children }) => {
   const [homePlayerToggle, setHomePlayerToggle] = useState(false);
   const [currentSong, setcurrentSong] = useState({
     image: SampleImage,
-    title: "sample",
-    artist: "sample",
+    title: 'sample',
+    artist: 'sample',
+    song: 'smaple',
   });
 
   const handleClick = (clicked) => {
