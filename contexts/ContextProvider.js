@@ -1,5 +1,6 @@
-import { useState, createContext, useContext } from "react";
-import SampleImage from "../public/default_player_image.webp";
+import { useState, useEffect, createContext, useContext } from 'react';
+import SampleImage from '../public/default_player_image.webp';
+import axios from 'axios';
 
 const StateContext = createContext();
 
@@ -21,10 +22,40 @@ export const ContextProvider = ({ children }) => {
     artist: 'sample',
     song: 'smaple',
   });
+  const [topCharts, setTopCharts] = useState([]);
+  const [topTrending, setTopTrending] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
 
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true });
   };
+
+  // api fetch
+  const getTopCharts = async () => {
+    try {
+      const { data } = await axios.get('api/top/charts');
+      setTopCharts(data);
+      setIsFetching(false);
+    } catch (error) {
+      console.log('getTopCharts error: ', error);
+    }
+  };
+
+  const getTopTrending = async () => {
+    try {
+      const { data } = await axios.get('api/top/trending');
+      setTopTrending(data);
+      setIsFetching(false);
+    } catch (error) {
+      console.log('getTopTrending error: ', error);
+    }
+  };
+
+  useEffect(() => {
+    setIsFetching(true);
+    getTopCharts();
+    getTopTrending();
+  }, []);
 
   return (
     <StateContext.Provider
@@ -43,6 +74,11 @@ export const ContextProvider = ({ children }) => {
         initialState,
         setIsClicked,
         handleClick,
+        topCharts,
+        setTopCharts,
+        isFetching,
+        setIsFetching,
+        topTrending,
       }}
     >
       {children}
