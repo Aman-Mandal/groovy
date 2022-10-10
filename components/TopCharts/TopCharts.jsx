@@ -7,26 +7,8 @@ import axios from 'axios';
 import AddIcon from '@mui/icons-material/Add';
 import Loader from '../Loader/Loader';
 const TopCharts = () => {
-  const { setcurrentSong } = useStateContext();
-  const [topCharts, setTopCharts] = useState([]);
-  const [isFetching, setIsFetching] = useState(false);
-
-  // api fetch
-  const getTopCharts = async () => {
-    setIsFetching(true);
-    try {
-      const { data } = await axios.get('api/top/charts');
-      setTopCharts(data);
-      setIsFetching(false);
-    } catch (error) {
-      console.log('getTopCharts error: ', error);
-    }
-  };
-
-  useEffect(() => {
-    setIsFetching(true);
-    getTopCharts();
-  }, []);
+  const { setcurrentSong, topCharts, setTopCharts, isFetching, setIsFetching } =
+    useStateContext();
 
   const selectSongHandler = (song) => {
     setcurrentSong((prev) => {
@@ -38,7 +20,7 @@ const TopCharts = () => {
   };
 
   return (
-    <div className='row-span-1 lg:col-span-2 col-span-4 w-full swatch_bg-brown p-4 rounded-md flex flex-col gap-4'>
+    <div className='row-span-1 lg:col-span-2 col-span-4 w-full swatch_bg-brown px-4 pt-4 rounded-md flex flex-col gap-4'>
       {isFetching ? (
         <Loader />
       ) : (
