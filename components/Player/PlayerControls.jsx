@@ -19,7 +19,7 @@ const PlayerControls = () => {
   };
 
   return (
-    <div className="flex justify-around items-center px-5">
+    <div className="flex justify-around mb-2 px-5">
       <div className="text-white cursor-pointer">
         <RepeatIcon />
       </div>
@@ -27,7 +27,7 @@ const PlayerControls = () => {
         <SkipPreviousIcon />
       </div>
       <div
-        className="h-14 w-14 rounded-2xl flex items-center justify-center bg-white cursor-pointer"
+        className="h-7 w-7 rounded-2xl flex items-center justify-center bg-white cursor-pointer"
         onClick={() => {
           setHomePlayerToggle((prev) => !prev);
           playerHandler();
