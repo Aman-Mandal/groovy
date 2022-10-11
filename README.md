@@ -97,6 +97,13 @@ If you need help, you can ask questions on our twitter for now :
 [MIT](LICENSE.md)
 
 
+## Thanks to all the Contributors ❤️
+
+<a href = "https://github.com/Aman-Mandal/groovy/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=Aman-Mandal/groovy"/>
+</a>
+
+
 ## Your Support means a lot
 
 Give a ⭐ to the project if you liked it :)
