@@ -79,7 +79,7 @@ const Navbar = () => {
         <div className='flex items-center gap-8'>
           <IconButton
             type='button'
-            className='relative swatch_text-primary rounded-full'
+            className={`relative swatch_text-primary rounded-full ${activeMenu ? 'hidden' : ''}`}
             onClick={() => setActiveMenu((prev) => !prev)}
           >
             <MenuIcon />
