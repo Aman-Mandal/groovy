@@ -1,5 +1,5 @@
 import React from 'react';
-import { data } from './podcastData';
+import { data } from '../data/podcastData';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 function Podcast() {
