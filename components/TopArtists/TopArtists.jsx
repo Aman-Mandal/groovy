@@ -24,12 +24,21 @@ const TopArtists = () => {
             {topTrending.map(
               (artist, key) =>
                 key > 8 && (
-                  <Artist
-                    name={artist?.artists[0].alias}
-                    count={artist.count}
-                    img={artist?.images.background}
-                    key={key}
-                  />
+                  <Link
+                    href={{
+                      pathname: '/Artists/[artistId]',
+                      query: { artistId: artist?.artists[0].id },
+                    }}
+                  >
+                    <a>
+                      <Artist
+                        name={artist?.artists[0].alias}
+                        count={artist.count}
+                        img={artist?.images.background}
+                        key={key}
+                      />
+                    </a>
+                  </Link>
                 )
             )}
           </div>
