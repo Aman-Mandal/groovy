@@ -23,7 +23,7 @@ const Player = () => {
     let key;
 
     key = setInterval(() => {
-      setDuration(audio?.duration);
+      audio.duration && setDuration(audio.duration);
       setCurrentTime(audio?.currentTime);
       setProgressTime((audio?.currentTime / audio?.duration) * 100);
     }, 1000);
