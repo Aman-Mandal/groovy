@@ -29,19 +29,10 @@ const Sidebar = () => {
         className='z-50 fixed w-72 h-full sidebar pl-4 pb-10 pt-2 swatch_bg-brown overflow-auto'
         onClick={(event) => event.stopPropagation()}
       >
-        <Cross onClick={() => setActiveMenu(false)} />
-
-        <div className="flex justify-between items-center gap-3 ml-3 md:pt-0 pt-3 text-xl font-extrabold tracking-tight text-slate-900">
-          <Link href="/">
-            <span className="text-2x text-gray-100 cursor-pointer">Groovy</span>
+        <div className='flex justify-between items-center gap-3 ml-3 md:pt-0 pt-3 text-xl font-extrabold tracking-tight text-slate-900'>
+          <Link href='/'>
+            <span className='text-2x text-gray-100 cursor-pointer'>Groovy</span>
           </Link>
-          <IconButton
-            type='button'
-            onClick={() => setActiveMenu((prev) => !prev)}
-            className='text-xl rounded-full px-3 block md:hidden'
-          >
-            <CancelIcon className='text-gray-100' />
-          </IconButton>
         </div>
 
         <div className='lg:hidden flex items-center p-3 gap-2 border-[1px] border-gray-500 rounded-md swatch_bg-brown my-3'>
