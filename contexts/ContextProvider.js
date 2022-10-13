@@ -8,6 +8,8 @@ const initialState = {
   notification: false,
   settings: false,
   profile: false,
+  
+  
 };
 
 export const ContextProvider = ({ children }) => {
