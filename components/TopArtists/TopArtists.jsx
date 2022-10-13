@@ -27,7 +27,7 @@ const TopArtists = () => {
                   <Link
                     href={{
                       pathname: '/Artists/[artistId]',
-                      query: { artistId: artist?.artists[0].id },
+                      query: { artistId: artist?.artists[0].adamid },
                     }}
                   >
                     <a>
