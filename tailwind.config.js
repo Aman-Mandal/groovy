@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         player: "rgb(87,114,255)",
+        grayTheme  :'#18181d'
       },
     },
     backgroundImage: {
