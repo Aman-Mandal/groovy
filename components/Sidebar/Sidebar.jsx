@@ -2,7 +2,7 @@ import { links } from '../../data/data';
 import { useStateContext } from '../../contexts/ContextProvider';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import CancelIcon from '@mui/icons-material/Cancel';
+import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
 import Cross from '../svg/Cross';
 import SearchIcon from '@mui/icons-material/Search';
@@ -18,7 +18,7 @@ const Sidebar = () => {
   const router = useRouter();
 
   const handleCloseSidebar = () => {
-    if (activeMenu && screenSize <= 900) {
+    if (activeMenu) {
       setActiveMenu(false);
     }
   };
@@ -33,6 +33,7 @@ const Sidebar = () => {
           <Link href='/'>
             <span className='text-2x text-gray-100 cursor-pointer'>Groovy</span>
           </Link>
+          <p className='text-2x font-bold text-white cursor-pointer pr-4' onClick={handleCloseSidebar}><CloseIcon /></p>
         </div>
 
         <div className='lg:hidden flex items-center p-3 gap-2 border-[1px] border-gray-500 rounded-md swatch_bg-brown my-3'>
