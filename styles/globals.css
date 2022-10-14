@@ -9,6 +9,7 @@
 .swatch_bg-brown {
   background: #18181d;
 }
+
 .swatch_bg-secondary {
   background: #192cfd;
 }
@@ -105,16 +106,16 @@ a {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
 }
 
-.play-cust{
-    margin-left: -3.5rem;
+.play-cust {
+  margin-left: -3.5rem;
 }
 
-@media only screen and (max-width: 425px){
-	/*Small smartphones [325px -> 425px]*/
-  .notMobile{
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  .notMobile {
     display: none !important;
-  }  
+  }
 }
