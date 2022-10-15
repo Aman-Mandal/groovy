@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        white: "#FFF",
         player: "rgb(87,114,255)",
         grayTheme  :'#18181d'
       },
