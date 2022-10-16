@@ -25,6 +25,7 @@ const TopArtists = () => {
               (artist, key) =>
                 key > 8 && (
                   <Link
+                    key={key}
                     href={{
                       pathname: '/Artists/[artistId]',
                       query: { artistId: artist?.artists[0].adamid },
