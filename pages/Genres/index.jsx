@@ -27,38 +27,38 @@ const Genres = () => {
     >
       <h2 className='text-white text-5xl font-bold'>Browse</h2>
 
-      {/* navlink */}
-      <nav class='/Genres'>
+       {/* navlink */}
+       <nav class='/Genres'>
         <div class='container flex items-center justify-start p-6 mx-auto text-white capitalize'>
-          <Link href={`/Genres`}>
-            <a class='text-white border-b-2 border-blue-500 mx-1.5 sm:mx-6'>
+        <Link href={`/Genres/`}>
+        <a class='text-white border-b-2 border-blue-500 mx-1.5 sm:mx-6'>
               GENRES & MOODS
             </a>
           </Link>
 
-          <Link href={`/Genres/category/podcasts`}>
+          <Link href={`/Genres/GenreCategory/podcasts`}>
             <a class='border-b-2 border-transparent hover:text-white hover:border-blue-500 mx-1.5 sm:mx-6'>
               PODCASTS
             </a>
           </Link>
-          <Link href={`/Genres/category/charts`}>
+          <Link href={`/Genres/GenreCategory/charts`}>
             <a class='border-b-2 border-transparent hover:text-white  hover:border-blue-500 mx-1.5 sm:mx-6'>
               CHARTS
             </a>
           </Link>
-          <Link href={`/Genres/category/newreleases`}>
+          <Link href={`/Genres/GenreCategory/newreleases`}>
             <a class='border-b-2 border-transparent hover:text-white  hover:border-blue-500 mx-1.5 sm:mx-6'>
               NEW RELEASES
             </a>
           </Link>
-          <Link href={`/Genres/category/discover`}>
+          <Link href={`/Genres/GenreCategory/discover`}>
             <a class='border-b-2 border-transparent hover:text-white  hover:border-blue-500 mx-1.5 sm:mx-6'>
               DISCOVER
             </a>
           </Link>
 
-          <Link href={`/Genres/category/concerts`}>
-            <a class='border-b-2 border-transparent hover:text-white  hover:border-blue-500 mx-1.5 sm:mx-6'>
+          <Link href={`/Genres/GenreCategory/concerts`}>
+          <a class='border-b-2 border-transparent hover:text-white  hover:border-blue-500 mx-1.5 sm:mx-6'>
               CONCERTS
             </a>
           </Link>
