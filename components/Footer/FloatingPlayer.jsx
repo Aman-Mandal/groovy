@@ -4,7 +4,7 @@ import NowPlayingImage from '../Player/NowPlayingImage';
 import Volume from './Volume';
 
 const FloatingPlayer = () => {
-  const { activeMenu, currentSong } = useStateContext();
+  const { activeMenu, currentSong, screenSize } = useStateContext();
 
   return (
     <div
@@ -24,7 +24,7 @@ const FloatingPlayer = () => {
       <div className='w-80 play-cust'>
         <PlayerControls />
       </div>
-      <Volume />
+      {screenSize >= 640 && <Volume />}
     </div>
   );
 };
