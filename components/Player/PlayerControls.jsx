@@ -5,6 +5,7 @@ import SkipNextIcon from '@mui/icons-material/SkipNext';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useStateContext } from '../../contexts/ContextProvider';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const PlayerControls = () => {
   const {
@@ -23,9 +24,11 @@ const PlayerControls = () => {
     }
   };
 
+  const isAboveSmallScreen = screenSize >= 640;
+
   return (
-    <div className='flex justify-around items-center mb-2 px-5'>
-      {screenSize >= 640 && (
+    <div className='flex justify-around items-center'>
+      {isAboveSmallScreen && (
         <>
           <div className='text-white cursor-pointer'>
             <RepeatIcon />
@@ -34,6 +37,15 @@ const PlayerControls = () => {
             <SkipPreviousIcon />
           </div>
         </>
+      )}
+      {!isAboveSmallScreen && (
+        <FavoriteBorderIcon
+          sx={{
+            marginRight: '1rem',
+            color: 'rgb(87,114,255)',
+            fontSize: '32px',
+          }}
+        />
       )}
       <div
         className='aspect-square w-8 sm:w-14 rounded-2xl flex items-center justify-center bg-white cursor-pointer'
@@ -46,7 +58,7 @@ const PlayerControls = () => {
           {homePlayerToggle ? <PauseIcon /> : <PlayArrowIcon />}
         </span>
       </div>
-      {screenSize >= 640 && (
+      {isAboveSmallScreen && (
         <>
           <div className='text-white cursor-pointer'>
             <SkipNextIcon />
