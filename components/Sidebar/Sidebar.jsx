@@ -14,7 +14,7 @@ const normalLink =
   'flex items-center gap-4 pl-3 py-1 my-1 text-md text-gray-100 cursor-pointer hover:text-[#192cfd] transition-colors duration-200 hover:border-r-2 border-[#192cfd]';
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
   const router = useRouter();
 
   const handleCloseSidebar = () => {
@@ -33,7 +33,12 @@ const Sidebar = () => {
           <Link href='/'>
             <span className='text-2x text-gray-100 cursor-pointer'>Groovy</span>
           </Link>
-          <p className='text-2x font-bold text-white cursor-pointer pr-4' onClick={handleCloseSidebar}><CloseIcon /></p>
+          <p
+            className='text-2x font-bold text-white cursor-pointer pr-4'
+            onClick={handleCloseSidebar}
+          >
+            <CloseIcon />
+          </p>
         </div>
 
         <div className='lg:hidden flex items-center p-3 gap-2 border-[1px] border-gray-500 rounded-md swatch_bg-brown my-3'>
@@ -46,6 +51,23 @@ const Sidebar = () => {
         </div>
 
         <div className='my-3'>
+          {screenSize < 640 && (
+            <div className='flex gap-4 m-2'>
+              <Link href='/'>
+                <a className='uppercase font-light swatch_text-secondary'>
+                  music
+                </a>
+              </Link>
+              <Link href='/Podcast'>
+                <a className='uppercase font-light swatch_text-primary hover:text-blue-600 focus:text-blue-600'>
+                  podcast
+                </a>
+              </Link>
+              <Link href='/Live'>
+                <a className='uppercase font-light swatch_text-primary'>live</a>
+              </Link>
+            </div>
+          )}
           {links.map((item) => (
             <div key={item.title} className='w-full flex flex-col gap-2 mb-5'>
               <p className='swatch_text-primary m-3 mb-1 tracking-widest text-sm uppercase'>

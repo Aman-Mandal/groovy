@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps, session }) => {
       <ContextProvider>
         {/* set active menu */}
         <div className='w-full flex'>
-          {<Sidebar />}
+          <Sidebar />
           <div className='w-full bg-woman-in-black bg-contain bg-right bg-no-repeat flex flex-col z-10 overscroll-none max-h-screen h-screen overflow-y-hidden'>
             <Navbar />
             <Component {...pageProps} />
