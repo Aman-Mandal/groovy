@@ -11,7 +11,7 @@ const NowPlayingImage = () => {
         src={currentSong.image}
         layout='fill'
         alt='artist-image'
-        className='object-cover object-top rounded-md'
+        className='object-cover object-top lg:rounded-md rounded-lg'
       />
     </div>
   );

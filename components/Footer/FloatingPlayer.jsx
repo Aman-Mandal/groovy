@@ -8,7 +8,7 @@ const FloatingPlayer = () => {
 
   return (
     <div
-      className={`lg:hidden absolute bottom-0 flex justify-between items-center bg-black swatch_text-primary w-full px-1 py-1 border-t-[1.5px] border-t-gray-600 ${
+      className={`lg:hidden absolute bottom-0 flex justify-between items-center bg-black swatch_text-primary w-full px-2 py-1 border-t-[1.5px] border-t-gray-600 ${
         activeMenu && 'md:ml-72 md:w-[calc(100%-18rem)]'
       }`}
     >
