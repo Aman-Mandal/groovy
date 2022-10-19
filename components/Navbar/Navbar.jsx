@@ -79,22 +79,32 @@ const Navbar = () => {
         <div className='flex items-center gap-8'>
           <IconButton
             type='button'
-            className={`relative swatch_text-primary rounded-full ${activeMenu ? 'hidden' : ''}`}
+            className={`relative swatch_text-primary rounded-full ${
+              activeMenu ? 'hidden' : ''
+            }`}
             onClick={() => setActiveMenu((prev) => !prev)}
           >
             <MenuIcon />
           </IconButton>
-          <Link href='/'>
-            <a className='uppercase font-light swatch_text-secondary notMobile'>music</a>
-          </Link>
-          <Link href='/Podcast'>
-            <a className='uppercase font-light swatch_text-primary hover:text-blue-600 focus:text-blue-600 notMobile'>
-              podcast
-            </a>
-          </Link>
-          <Link href='/'>
-            <a className='uppercase font-light swatch_text-primary notMobile'>live</a>
-          </Link>
+          {screenSize > 640 && (
+            <>
+              <Link href='/'>
+                <a className='uppercase font-light swatch_text-secondary notMobile'>
+                  music
+                </a>
+              </Link>
+              <Link href='/Podcast'>
+                <a className='uppercase font-light swatch_text-primary hover:text-blue-600 focus:text-blue-600 notMobile'>
+                  podcast
+                </a>
+              </Link>
+              <Link href='/liv'>
+                <a className='uppercase font-light swatch_text-primary notMobile'>
+                  live
+                </a>
+              </Link>
+            </>
+          )}
         </div>
 
         <div className='hidden relative lg:flex items-center p-3 gap-2 border-[1px] border-gray-500 rounded-md swatch_bg-brown'>
@@ -109,7 +119,11 @@ const Navbar = () => {
           func={() => handleClick('notification')}
         />
         <div className='notMobile'>
-          <NavButton icon={<SettingsIcon />} title={'Settings'} func={() => {}} />
+          <NavButton
+            icon={<SettingsIcon />}
+            title={'Settings'}
+            func={() => {}}
+          />
         </div>
         <div
           className='flex items-center space-x-4 
