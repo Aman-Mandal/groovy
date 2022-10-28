@@ -9,13 +9,19 @@ module.exports = {
       colors: {
         white: "#FFF",
         player: "rgb(87,114,255)",
-        grayTheme  :'#18181d'
+        grayTheme: '#18181d'
       },
     },
     backgroundImage: {
       "woman-in-black":
         "url('https://user-images.githubusercontent.com/95094057/193284518-44ca0774-79e4-486a-acab-1b4258b583a2.png')",
     },
+    backdropBlur: {
+      'none': 'none',
+      'blur': 'blur(20px)'
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-filters'),
+  ],
 };

@@ -21,7 +21,8 @@
     "next-auth": "^4.12.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.1"
+    "react-router-dom": "^6.4.1",
+    "tailwindcss-filters": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
