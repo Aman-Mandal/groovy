@@ -6,6 +6,7 @@
 .swatch_bg-black {
   background: #080809;
 }
+
 .swatch_bg-brown {
   background: #18181d;
 }
@@ -13,18 +14,23 @@
 .swatch_bg-secondary {
   background: #192cfd;
 }
+
 .swatch_bg-secondaryDark {
   background: #141c52;
 }
+
 .swatch_bg-secondaryLight {
   background: #234da3;
 }
+
 .swatch_6 {
   background: #c88b85;
 }
+
 .swatch_bg-primary {
   background: #d7d1cf;
 }
+
 .swatch_bg-orange {
   background: #c52e1d;
 }
@@ -32,24 +38,31 @@
 .swatch_text-black {
   color: #080809;
 }
+
 .swatch_text-brown {
   color: #5b4040;
 }
+
 .swatch_text-secondary {
   color: #192cfd;
 }
+
 .swatch_text-secondaryDark {
   color: #141c52;
 }
+
 .swatch_text-secondaryLight {
   color: #234da3;
 }
+
 .swatch_6 {
   color: #c88b85;
 }
+
 .swatch_text-primary {
   color: #d7d1cf;
 }
+
 .swatch_text-orange {
   color: #c52e1d;
 }
@@ -114,6 +127,7 @@ a {
 }
 
 @media only screen and (max-width: 425px) {
+
   /*Small smartphones [325px -> 425px]*/
   .notMobile {
     display: none !important;
