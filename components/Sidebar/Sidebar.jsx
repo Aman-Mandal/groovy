@@ -22,6 +22,16 @@ const Sidebar = () => {
       setActiveMenu(false);
     }
   };
+  const handleHideSidebar = () => {
+    if (
+      activeMenu &&
+      screenSize < 640 &&
+      router.pathname !== '/' &&
+      router.pathname === '/Explore'
+    ) {
+      setActiveMenu(false);
+    }
+  };
 
   return (
     activeMenu && (
@@ -59,12 +69,20 @@ const Sidebar = () => {
                 </a>
               </Link>
               <Link href='/Podcast'>
-                <a className='uppercase font-light swatch_text-primary hover:text-blue-600 focus:text-blue-600'>
+                <a
+                  onClick={handleHideSidebar}
+                  className='uppercase font-light swatch_text-primary hover:text-blue-600 focus:text-blue-600'
+                >
                   podcast
                 </a>
               </Link>
               <Link href='/Live'>
-                <a className='uppercase font-light swatch_text-primary'>live</a>
+                <a
+                  onClick={handleHideSidebar}
+                  className='uppercase font-light swatch_text-primary'
+                >
+                  live
+                </a>
               </Link>
             </div>
           )}
@@ -83,7 +101,12 @@ const Sidebar = () => {
                     }
                   >
                     {link.icon}
-                    <span className='capitalize text-lg'>{link.name}</span>
+                    <span
+                      className='capitalize text-lg'
+                      onClick={handleCloseSidebar}
+                    >
+                      {link.name}
+                    </span>
                   </div>
                 </Link>
               ))}
