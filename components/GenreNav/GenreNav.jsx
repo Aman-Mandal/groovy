@@ -16,6 +16,7 @@ const GenreNav = () => {
           <Link key={category} href={`/Genres/${category}`}>
             <a class='text-white border-b-2 border-blue-500 mx-1.5 sm:mx-6 uppercase'>
               {category}
+              
             </a>
           </Link>
         ))}
